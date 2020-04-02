@@ -10,7 +10,7 @@ using System.Drawing;
 
 namespace HospitalProjectTeam4.Models
 {
-    public class Records
+    public class Record
     {
         [Key]
         public int RecordID { get; set; }
@@ -25,11 +25,11 @@ namespace HospitalProjectTeam4.Models
 
 
 
-        //Representing the many records to one appointment relationship       
-        //public int BookingID { get; set; }
-        //[ForeignKey("BookingID")]
+        //Representing the "One" in (Many Records to one Booking)   
+        public int BookingID { get; set; }
+        [ForeignKey("BookingID")]
 
-        //public virtual Bookings Bookings { get; set; }
+        public virtual Booking Booking { get; set; }
 
     }
 }

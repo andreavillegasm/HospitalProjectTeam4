@@ -25,8 +25,15 @@ namespace HospitalProjectTeam4.Data
         public HospitalProjectContext() : base("name=HospitalProjectContext")
         {
         }
+        public static HospitalProjectContext Create()
+        {
+            return new HospitalProjectContext();
+        }
 
-        public System.Data.Entity.DbSet<HospitalProjectTeam4.Models.Records> Records { get; set; }
+        public System.Data.Entity.DbSet<HospitalProjectTeam4.Models.Record> Records { get; set; }
+        public System.Data.Entity.DbSet<HospitalProjectTeam4.Models.Booking> Bookings { get; set; }
+        public System.Data.Entity.DbSet<HospitalProjectTeam4.Models.Patient> Patients { get; set; }
+        public System.Data.Entity.DbSet<HospitalProjectTeam4.Models.Doctor> Doctors { get; set; }
 
     }
 }

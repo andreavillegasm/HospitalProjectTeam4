@@ -1,0 +1,28 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+//Install  entity framework 6 on Tools > Manage Nuget Packages > Microsoft Entity Framework (ver 6.4)
+using System.Data.Entity;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Drawing;
+
+namespace HospitalProjectTeam4.Models
+{
+    public class Patient
+    {
+        [Key]
+        public int PatientID { get; set; }
+        public string PatientFName { get; set; }
+        public string PatientMNmae { get; set; }
+        public string PatientLNmae { get; set; }
+        public DateTime PatientBirthDate { get; set; }
+        public DateTime PatientEmail { get; set; }
+        public string PatientPhone { get; set; }
+        public string PatientAltPhone { get; set; }
+
+        //Representing the "Many" in (Many Bookings to one Patient)
+        public ICollection<Booking> Booking { get; set; }
+    }
+}
