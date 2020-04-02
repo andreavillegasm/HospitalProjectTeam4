@@ -1,0 +1,17 @@
+﻿@model List<HospitalProjectTeam4.Models.Record>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+
+@{
+    foreach (var Record in Model)
+    {
+        <div>@Record.RecordID</div>
+        <div>@Record.RecordName</div>
+
+    }
+
+
+}

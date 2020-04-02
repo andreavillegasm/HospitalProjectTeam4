@@ -4,9 +4,9 @@ using System.Linq;
 using System.Web;
 //Install  entity framework 6 on Tools > Manage Nuget Packages > Microsoft Entity Framework (ver 6.4)
 using System.Data.Entity;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Drawing;
+using System.ComponentModel.DataAnnotations;
+using HospitalProjectTeam4.Data;
 
 namespace HospitalProjectTeam4.Models
 {
@@ -18,7 +18,7 @@ namespace HospitalProjectTeam4.Models
         public string PatientMNmae { get; set; }
         public string PatientLNmae { get; set; }
         public DateTime PatientBirthDate { get; set; }
-        public DateTime PatientEmail { get; set; }
+        public string PatientEmail { get; set; }
         public string PatientPhone { get; set; }
         public string PatientAltPhone { get; set; }
 

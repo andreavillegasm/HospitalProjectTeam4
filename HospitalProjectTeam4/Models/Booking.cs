@@ -4,9 +4,9 @@ using System.Linq;
 using System.Web;
 //Install  entity framework 6 on Tools > Manage Nuget Packages > Microsoft Entity Framework (ver 6.4)
 using System.Data.Entity;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Drawing;
+using System.ComponentModel.DataAnnotations;
+using HospitalProjectTeam4.Data;
 
 namespace HospitalProjectTeam4.Models
 {
@@ -27,7 +27,7 @@ namespace HospitalProjectTeam4.Models
         public int DoctorID { get; set; }
         [ForeignKey("DoctorID")]
 
-        public virtual Doctor Docotor { get; set; }
+        public virtual Doctor Doctor { get; set; }
 
 
         //Representing the "Many" in (One Booking to many Records)

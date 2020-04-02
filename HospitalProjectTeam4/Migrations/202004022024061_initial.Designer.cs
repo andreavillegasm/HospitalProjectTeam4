@@ -13,7 +13,7 @@ namespace HospitalProjectTeam4.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202004020520048_initial"; }
+            get { return "202004022024061_initial"; }
         }
         
         string IMigrationMetadata.Source
