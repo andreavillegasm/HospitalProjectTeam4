@@ -32,7 +32,7 @@ namespace HospitalProjectTeam4.Controllers
         }
         public ActionResult List()
         {
-            string query = "Select * from Records ";
+            string query = "Select * from Records join Bookings on Records.BookingID = Bookings.BookingID order by BookingDate Desc";
             //Checks to see if the query is being sent
             Debug.WriteLine(query);
             List<Record> records = db.Records.SqlQuery(query).ToList();
