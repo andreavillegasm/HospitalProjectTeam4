@@ -1,0 +1,35 @@
+﻿@model HospitalProjectTeam4.Models.ViewModels.ListRecords
+@{
+    ViewBag.Title = "Show";
+}
+    <div class="container" id="show-record">
+        <h2 class="title">Record Details</h2>
+        <div>@Model.recordinfo.RecordName</div>
+        <small>@Model.bookinginfo.BookingDate</small>
+        <div>@Model.recordinfo.RecordType</div>
+        <!-- Check if Record has content-->
+        @{
+            if (@Model.recordinfo.RecordContent != null)
+            {
+                <div>@Model.recordinfo.RecordContent</div>
+            }
+        }
+
+        <!--Check if Record has an attachment -->
+        <div class="file-attach">
+            @{
+                if (@Model.recordinfo.HasFile == 1)
+                {
+                    <iframe src="../../Content/Records/@(Model.recordinfo.RecordID).@(Model.recordinfo.FileExtension)" width="100%" height="500px">
+                        </iframe>
+                }
+            }
+
+
+        </div>
+
+
+    </div>
+
+
+

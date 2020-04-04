@@ -22,3 +22,9 @@ select,
 textarea {
     max-width: 280px;
 }
+
+/*RECORDS*/
+/*list Record*/
+#show-record, .title{
+    text-align:center;
+}
