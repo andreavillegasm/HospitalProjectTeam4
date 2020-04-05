@@ -256,7 +256,7 @@
     <Content Include="Views\Record\Show.cshtml" />
     <Content Include="Views\Record\Add.cshtml" />
     <Content Include="Views\Record\Update.cshtml" />
-    <Content Include="Views\Record\Delete.cshtml" />
+    <Content Include="Views\Record\DeleteConfirm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

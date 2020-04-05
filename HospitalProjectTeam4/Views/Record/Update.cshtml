@@ -1,7 +1,57 @@
-﻿
+﻿@model HospitalProjectTeam4.Models.Record
 @{
     ViewBag.Title = "Update";
 }
 
-<h2>Update</h2>
+<div class="container">
+    <h2>Update Record</h2>
+    <form method="post" action="/Record/Update/@Model.RecordID">
+        <div class="form-group">
+            <label for="recordName">Record Name:</label>
+            <input type="text" class="form-control" id="recordName" name="RecordName" value="@Model.RecordName">
+        </div>
+        <div class="form-group">
+            <label for="recordType">Type of Record</label>
+            <select class="form-control" name="recordType" id="recordType">
+                <option value="notes">Notes</option>
+                <option value="prescription">Prescription</option>
+                <option value="referral">Referral</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-check-label" for="recordContent">Content</label>
+            <input type="text" class="form-control" id="recordContent" name="recordContent" value="@Model.RecordContent">
+        </div>
+
+        <!-- send the booking id hidden as they should not be able to change the booking associated with it-->
+        <input type="hidden" class="form-control" id="bookingID" name="bookingID" value="@Model.BookingID">
+
+        <div class="form-group">
+            <label class="form-check-label" for="recordFile">Attach a file</label>
+            <input type="file" name="recordFile" id="recordFile" />
+        </div>
+
+        <div class="file-attach">
+            @{
+                if (Model.HasFile == 1)
+                {
+                    <iframe src="../../Content/Records/@(Model.RecordID).@(Model.FileExtension)" width="100%" height="500px"></iframe>
+                    <input class="hidden" id="fileExtension" type="text" value="@Model.FileExtension" name="fileExtension" />
+                    <fieldset>
+                        <div>
+                            <span>Delete the attachment?</span>
+                        </div>
+                        <span>Yes</span>
+                        <input type="radio" value="yes" id="FileDeleteY" name="fileDelete" />
+                        <span>No</span>
+                        <input type="radio" value="no" id="FileDeleteN" name="fileDelete" checked />
+                    </fieldset>
+                }
+            }
+        </div>
+
+        <button type="submit" class="btn btn-info">Update Record</button>
+    </form>
+</div>
 
