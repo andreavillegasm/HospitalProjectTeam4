@@ -35,5 +35,8 @@ namespace HospitalProjectTeam4.Data
         public System.Data.Entity.DbSet<HospitalProjectTeam4.Models.Patient> Patients { get; set; }
         public System.Data.Entity.DbSet<HospitalProjectTeam4.Models.Doctor> Doctors { get; set; }
 
+        public System.Data.Entity.DbSet<HospitalProjectTeam4.Models.ForumPost> ForumPosts { get; set; }
+        public System.Data.Entity.DbSet<HospitalProjectTeam4.Models.ForumReply> ForumReplies { get; set; }
+
     }
 }
