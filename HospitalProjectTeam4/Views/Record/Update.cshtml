@@ -5,7 +5,7 @@
 
 <div class="container">
     <h2>Update Record</h2>
-    <form method="post" action="/Record/Update/@Model.RecordID">
+    <form method="post" action="/Record/Update/@Model.RecordID" enctype="multipart/form-data">
         <div class="form-group">
             <label for="recordName">Record Name:</label>
             <input type="text" class="form-control" id="recordName" name="RecordName" value="@Model.RecordName">
@@ -36,7 +36,7 @@
             @{
                 if (Model.HasFile == 1)
                 {
-                    <iframe src="../../Content/Records/@(Model.RecordID).@(Model.FileExtension)" width="100%" height="500px"></iframe>
+                    <iframe src="../../Content/Records/@(Model.RecordID).@(Model.FileExtension)" width="100%" height="1000px"></iframe>
                     <input class="hidden" id="fileExtension" type="text" value="@Model.FileExtension" name="fileExtension" />
                     <fieldset>
                         <div>

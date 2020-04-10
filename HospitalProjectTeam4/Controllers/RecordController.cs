@@ -87,7 +87,7 @@ namespace HospitalProjectTeam4.Controllers
         //Method is only called when it comes from a form submission
         //Parameters are all the values from the form
         [HttpPost]
-        public ActionResult New(string recordName, string recordType, string recordContent, int bookingID)
+        public ActionResult New(string recordName, string recordType, string recordContent, int bookingID, HttpPostedFileBase recordFile)
         {
             
 
@@ -107,6 +107,9 @@ namespace HospitalProjectTeam4.Controllers
 
             //RUN THE QUERY WITH THE PARAMETERS 
             db.Database.ExecuteSqlCommand(query, sqlparams);
+
+            //GRABING THE ID OF THE LAST RECORD WE JUST INSERTED
+            //var idquery = "select RecordID from Records desc limit 1";
 
             return RedirectToAction("List");
         }
@@ -195,7 +198,7 @@ namespace HospitalProjectTeam4.Controllers
             }
 
 
-            Debug.WriteLine("I am trying to edit the follwoing values: " + recordName + ", " + recordType + ", " + recordContent);
+            Debug.WriteLine("I am trying to edit the follwoing values: " + recordName + ", " + recordType + ", " + recordContent + " "+ recordFile);
 
             string query = "update Records set RecordName=@recordName, RecordType=@recordType, RecordContent=@recordContent, BookingID=@bookingID, HasFile=@hasfile, FileExtension=@fileExtension where RecordID=@id";
             SqlParameter[] sqlparams = new SqlParameter[7];
@@ -210,7 +213,7 @@ namespace HospitalProjectTeam4.Controllers
             db.Database.ExecuteSqlCommand(query, sqlparams);
 
 
-            return RedirectToAction("List");
+            return RedirectToAction("Show/"+id);
         }
         //DELETE CONFIRM PAGE
         //Sends the view of the delete confirmation with the info of the Record

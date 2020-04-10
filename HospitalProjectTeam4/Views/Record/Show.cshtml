@@ -19,12 +19,13 @@
             }
         }
 
+
         <!--Check if Record has an attachment -->
         <div class="file-attach">
             @{
                 if (@Model.recordinfo.HasFile == 1)
                 {
-                    <iframe src="../../Content/Records/@(Model.recordinfo.RecordID).@(Model.recordinfo.FileExtension)" width="100%" height="500px">
+                    <iframe src="../../Content/Records/@(Model.recordinfo.RecordID).@(Model.recordinfo.FileExtension)" width="100%" height="1000px">
                     </iframe>
                 }
             }
