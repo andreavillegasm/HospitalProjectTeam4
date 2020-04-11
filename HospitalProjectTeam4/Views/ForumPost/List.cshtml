@@ -1,7 +1,30 @@
-﻿
+﻿@model List<HospitalProjectTeam4.Models.ForumPost>
 @{
     ViewBag.Title = "List";
 }
 
-<h2>List</h2>
+<div class="container">
+    <h2 class="title">Forum Posts</h2>
+    <a class="btn btn-success" href="/Record/Add">Create a posting</a>
 
+    <div class="list-group">
+
+        @{
+            foreach (var post in Model)
+            {
+                <a href="Show/@post.PostID" class="list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h3 class="mb-1">@post.PostingTitle</h3>
+                        <p class="mb-1">Category: @post.PostingCategory</p>
+                        <small class="mb-1">@post.PostingDate</small>
+
+                    </div>
+                </a>
+
+            }
+
+
+        }
+    </div>
+
+</div>

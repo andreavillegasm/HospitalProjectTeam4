@@ -26,7 +26,14 @@ namespace HospitalProjectTeam4.Models
         public string PostingContent { get; set; }
         public int PostingState { get; set; }
 
-        
+        public string PostingCategory { get; set; }
+
+        //Representing the "Many" in (Many Replies to one ForumPost)
+        public ICollection<ForumReply> ForumReply { get; set; }
+
+
+
+
 
     }
 }
