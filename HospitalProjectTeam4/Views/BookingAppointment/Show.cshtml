@@ -1,0 +1,31 @@
+﻿@model  HospitalProjectTeam4.Models.Booking
+@{
+    ViewBag.Title = "Show";
+}
+
+<h2>Show booking information</h2>
+
+<div class="container-fluid">
+    <div class="col-md-4">
+        <div><p style="font-weight:bold">Doctor information</p></div>
+        <div>@Model.Doctor.DoctorFName</div>
+        <div>@Model.Doctor.DoctorLNmae</div>
+        <div>@Model.Doctor.DoctorBirthDate</div>
+        <div>@Model.Doctor.DoctorPhone</div>
+    </div>
+    <div class="col-md-4">
+        <div><p style="font-weight:bold">Patient information</p></div>
+        <div>@Model.Patient.PatientFName</div>
+        <div>@Model.Patient.PatientLNmae</div>
+        <div>@Model.Patient.PatientBirthDate</div>
+        <div>@Model.Patient.PatientPhone</div>
+        <div>@Model.Patient.PatientAltPhone</div>
+    </div>
+    <div class="col-md-4">
+        <div><p style="font-weight:bold">Booking information</p></div>
+        <div>Booking date: @Model.BookingDate</div>
+        <div>Date booking was done: @Model.CurrentDate</div>
+    </div>
+    
+</div>
+
