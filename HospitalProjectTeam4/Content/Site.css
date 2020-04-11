@@ -28,3 +28,8 @@ textarea {
 #show-record, .title{
     text-align:center;
 }
+
+/*GENERAL INTERFACE CSS*/
+.back-btn{
+    text-align:left;
+}
