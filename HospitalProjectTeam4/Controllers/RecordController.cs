@@ -221,8 +221,8 @@ namespace HospitalProjectTeam4.Controllers
         {
             string query = "select * from Records where RecordID=@id";
             SqlParameter param = new SqlParameter("@id", id);
-            Record selectedartist = db.Records.SqlQuery(query, param).FirstOrDefault();
-            return View(selectedartist);
+            Record selectedrecord = db.Records.SqlQuery(query, param).FirstOrDefault();
+            return View(selectedrecord);
         }
 
         //DELETING THE RECORDS FROM THE DATABASE

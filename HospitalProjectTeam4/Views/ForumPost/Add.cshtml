@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "Add";
+}
+
+<div class="container">
+    <h2>Make a new Post</h2>
+    <form method="post" action="/ForumPost/New">
+        <!-- temporary section until login and users abilitated-->
+        <div class="form-group">
+            <label class="form-check-label" for="patientID">Patient ID</label>
+            <input type="text" class="form-control" id="patientID" name="patientID">
+        </div>
+        <div class="form-group">
+            <label for="postingTitle">Posting Title</label>
+            <input type="text" class="form-control" id="postingTitle" name="postingTitle">
+        </div>
+        <div class="form-group">
+            <label for="postingCateogry">Posting Cateogory</label>
+            <select class="form-control" name="postingCategory" id="postingCategory">
+                <option value="general health">General Health</option>
+                <option value="mental health">Mental Health</option>
+                <option value="brain and nerves">Brain and Nerves</option>
+                <option value="women's health">Women's Health</option>
+                <option value="operations and surgical procedures">Operations and Surgical Procedures</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-check-label" for="postingContent">Posting Content</label>
+            <input type="text" class="form-control" id="postingContent" name="postingContent">
+        </div>
+
+
+        <button type="submit" class="btn btn-info">Create Posting</button>
+    </form>
+</div>

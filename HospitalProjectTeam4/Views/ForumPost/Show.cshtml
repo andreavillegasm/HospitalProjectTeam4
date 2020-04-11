@@ -1,0 +1,44 @@
+﻿@model HospitalProjectTeam4.Models.ViewModels.ForumPostDetails
+@{
+    ViewBag.Title = "Show";
+}
+<div class="container" id="show-record">
+    <div class="back-btn" style="text-align:left;">
+        <a  href="/ForumPost/List">Go back to posts</a>
+    </div>
+    
+    <div class="posting-view">
+        <h2 class="title">@Model.forumPost.PostingTitle</h2>
+        <small>@Model.forumPost.PostingDate</small>
+        <div>@Model.forumPost.PostingCategory</div>
+        <div>@Model.forumPost.PostingContent</div>
+
+        <div class="edit-buttons">
+            <a class="btn btn-warning" href="/ForumPost/Update/@Model.forumPost.PostID">Edit </a>
+            <a class="btn btn-danger" href="/ForumPost/DeleteConfirm/@Model.forumPost.PostID"> Delete</a>
+        </div>
+    </div>
+    <!-- Replies for the posting-->
+    <div class="list-group">
+
+        @{
+            foreach (var reply in @Model.forumReplies)
+            {
+                <a href="" class="list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-between">
+                        <p class="mb-1">@reply.ReplyContent</p>
+                        <small class="mb-1">@reply.ReplyDate</small>
+
+                    </div>
+                    
+                </a>
+
+            }
+
+
+        }
+    </div>
+
+
+</div>
+
