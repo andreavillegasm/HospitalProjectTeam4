@@ -14,8 +14,8 @@ namespace HospitalProjectTeam4.Models
     {
         [Key]
         public int BookingID { get; set; }
-        public DateTime CurrentDate { get; set; }
-        public DateTime BookingDate { get; set; }
+        public string CurrentDate { get; set; }
+        public string BookingDate { get; set; }
 
         //Representing the "One" in (Many Bookings to one Patient)
         public int PatientID { get; set; }

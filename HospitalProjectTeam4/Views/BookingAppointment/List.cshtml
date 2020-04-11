@@ -1,0 +1,13 @@
+﻿@model List<HospitalProjectTeam4.Models.Booking>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>All bookings</h2>
+@{ 
+    foreach (var books in Model)
+    {
+        <div>@books.Doctor.DoctorFName</div>
+        <div>@books.BookingDate</div>
+    }
+}

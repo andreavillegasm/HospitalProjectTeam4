@@ -14,10 +14,16 @@ namespace HospitalProjectTeam4.Models
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
             // Add custom user claims here
+
             return userIdentity;
         }
-    }
 
+        public string userfirstname { get; set; }
+        public string usermiddlename { get; set; }
+        public string userlastname { get; set; }
+        public string userdob { get; set; }
+        public string userrole { get; set; }
+    }
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
@@ -29,5 +35,7 @@ namespace HospitalProjectTeam4.Models
         {
             return new ApplicationDbContext();
         }
+
+
     }
 }
