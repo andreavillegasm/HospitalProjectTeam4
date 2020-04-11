@@ -21,8 +21,9 @@ namespace HospitalProjectTeam4.Models
         public string LostFoundPerson { get; set; }
         public string LostFoundNote { get; set; }
 
-        [ForeignKey("PatientID")]
+       
         public int PatientID { get; set; }
-        
+        [ForeignKey("PatientID")]
+        public virtual Patient Patient { get; set; }
     }
 }
