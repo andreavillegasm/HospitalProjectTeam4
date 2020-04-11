@@ -50,7 +50,9 @@ namespace HospitalProjectTeam4.Controllers
 
         public ActionResult List()
         {
-            return View();
+            List<Booking> Bookings;
+            Bookings = db.Bookings.ToList();
+            return View(Bookings);
         }
     }
 }
