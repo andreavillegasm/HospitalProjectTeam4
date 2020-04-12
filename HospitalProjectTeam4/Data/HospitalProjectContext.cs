@@ -77,5 +77,7 @@ namespace HospitalProjectTeam4.Data
         public System.Data.Entity.DbSet<HospitalProjectTeam4.Models.HospitalStaff> hospitalStaffs { get; set; }
         public System.Data.Entity.DbSet<HospitalProjectTeam4.Models.LostFound> lostFounds { get; set; }
 
+        public System.Data.Entity.DbSet<HospitalProjectTeam4.Models.News> News { get; set; }
+        public System.Data.Entity.DbSet<HospitalProjectTeam4.Models.Category> Categories { get; set; }
     }
 }

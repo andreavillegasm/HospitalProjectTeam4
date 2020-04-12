@@ -215,9 +215,14 @@
     <Compile Include="Migrations\202004120442400_dbcontext-fixed.designer.cs">
       <DependentUpon>202004120442400_dbcontext-fixed.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004121420497_news.cs" />
+    <Compile Include="Migrations\202004121420497_news.designer.cs">
+      <DependentUpon>202004121420497_news.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Booking.cs" />
+    <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Doctor.cs" />
     <Compile Include="Models\ForumPost.cs" />
     <Compile Include="Models\ForumReply.cs" />
@@ -225,6 +230,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\LostFound.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\News.cs" />
     <Compile Include="Models\Patient.cs" />
     <Compile Include="Models\Record.cs" />
     <Compile Include="Models\ViewModels\AddBooking.cs" />
@@ -307,6 +313,7 @@
     <Content Include="Views\LostFound\Add.cshtml" />
     <Content Include="Views\LostFound\List.cshtml" />
     <Content Include="Views\LostFound\Update.cshtml" />
+    <Content Include="Views\News\Add.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -352,6 +359,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004120442400_dbcontext-fixed.resx">
       <DependentUpon>202004120442400_dbcontext-fixed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004121420497_news.resx">
+      <DependentUpon>202004121420497_news.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
