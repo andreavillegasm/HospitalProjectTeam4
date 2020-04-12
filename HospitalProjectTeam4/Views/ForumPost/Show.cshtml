@@ -2,42 +2,50 @@
 @{
     ViewBag.Title = "Show";
 }
-<div class="container" id="show-record">
-    <div class="back-btn" style="text-align:left;">
-        <a href="/ForumPost/List">Go back to posts</a>
-    </div>
-
-    <div class="posting-view">
-        <h2 class="title">@Model.forumPost.PostingTitle</h2>
-        <small>@Model.forumPost.PostingDate</small>
-        <div>@Model.forumPost.PostingCategory</div>
-        <div>@Model.forumPost.PostingContent</div>
-
-        <div class="edit-buttons">
-            <a class="btn btn-warning" href="/ForumPost/Update/@Model.forumPost.PostID">Edit </a>
-            <a class="btn btn-danger" href="/ForumPost/DeleteConfirm/@Model.forumPost.PostID"> Delete</a>
+    <div class="container" id="show-record">
+        <div class="back-btn" style="text-align:left;">
+            <a href="/ForumPost/List">Go back to posts</a>
         </div>
-    </div>
-    <!-- Replies for the posting-->
-    <div class="list-group">
 
-        @{
-            foreach (var reply in @Model.forumReplies)
-            {
-                <a href="" class="list-group-item list-group-item-action">
-                    <div class="d-flex w-100 justify-content-between">
-                        <p class="mb-1">@reply.ReplyContent</p>
-                        <small class="mb-1">@reply.ReplyDate</small>
+        <div class="posting-view">
+            <h2 class="title">@Model.forumPost.PostingTitle</h2>
+            <small>@Model.forumPost.PostingDate</small>
+            <div>@Model.forumPost.PostingCategory</div>
+            <div>@Model.forumPost.PostingContent</div>
 
-                    </div>
+            <div class="edit-buttons">
+                <a class="btn btn-warning" href="/ForumPost/Update/@Model.forumPost.PostID">Edit </a>
+                <a class="btn btn-danger" href="/ForumPost/DeleteConfirm/@Model.forumPost.PostID"> Delete</a>
+            </div>
+        </div>
+        <!-- Replies for the posting-->
+        <div class="list-group">
 
-                </a>
+            @{
+                foreach (var reply in @Model.forumReplies)
+                {
+                        <div class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <p class="mb-1">@reply.ReplyContent</p>
+                                <small class="mb-1">@reply.ReplyDate</small>
+                                <div>
+                                    <a href="/ForumPost/EditComment/@reply.ReplyID" >Edit</a>
+                                    <a href="/ForumPost/DeleteComment/@reply.ReplyID?PostID=@Model.forumPost.PostID" >Delete</a>
+                                </div>
+                              
+                                
+
+                            </div>
+                        </div>
+
+                }
+
 
             }
-
-
-        }
+        </div>
+        <!-- Adding a new  comment to the post-->
+        <form action="/ForumPost/AddComment/@Model.forumPost.PostID" method="post">
+                <input type="text" class="" id="replyContent" placeholder="Write your comment here..." name="replyContent">
+                <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Comment</button>
+        </form>
     </div>
-
-
-</div>

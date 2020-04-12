@@ -299,6 +299,7 @@
     <Content Include="Views\ForumPost\Update.cshtml" />
     <Content Include="Views\BookingAppointment\Show.cshtml" />
     <Content Include="Views\BookingAppointment\Update.cshtml" />
+    <Content Include="Views\ForumPost\EditComment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

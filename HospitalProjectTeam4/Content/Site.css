@@ -33,3 +33,11 @@ textarea {
 .back-btn{
     text-align:left;
 }
+/*FORUM POSTS*/
+#comment-input{
+width:100%;
+}
+
+#comment-info, .edit-buttons {
+    display:inline;
+}

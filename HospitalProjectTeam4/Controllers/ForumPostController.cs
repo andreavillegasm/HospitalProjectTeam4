@@ -60,7 +60,7 @@ namespace HospitalProjectTeam4.Controllers
             }
             var second_parameter = new SqlParameter("@id", id);
             //Find information about the booking related to that  record
-            var second_query = "select * from ForumReplies where PostID= @id";
+            var second_query = "select * from ForumReplies where PostID= @id order by ReplyDate Desc";
             List<ForumReply> replies = db.ForumReplies.SqlQuery(second_query, second_parameter).ToList();
             if (replies == null)
             {
@@ -170,5 +170,83 @@ namespace HospitalProjectTeam4.Controllers
 
             return RedirectToAction("List");
         }
+
+        //ADDING A COMMENT TO A SPECIFIC POST
+        [HttpPost]
+        public ActionResult AddComment(int id, string replyContent)
+        {
+            Debug.WriteLine("forum post id is" + id);
+
+            //Get the date for the comment
+            DateTime currentTime = DateTime.Now;
+
+            //Insert references into the bridging table
+            string query = "insert into ForumReplies (PostID, ReplyDate, ReplyContent) values (@id, @currentTime, @replyContent)";
+            SqlParameter[] sqlparams = new SqlParameter[3];
+            sqlparams[0] = new SqlParameter("@id", id);
+            sqlparams[1] = new SqlParameter("@currentTime", currentTime);
+            sqlparams[2] = new SqlParameter("@replyContent", replyContent);
+
+
+            db.Database.ExecuteSqlCommand(query, sqlparams);
+   
+
+            return RedirectToAction("Show/" + id);
+
+
+        }
+        public ActionResult DeleteComment(int id, int PostID)
+        {
+            //For this one we are receiving the comment id rather than the post id
+            Debug.WriteLine("forum post id is" + id);
+
+
+            //Delete comment
+            string query = "delete from ForumReplies where ReplyID=@id";
+            SqlParameter param = new SqlParameter("@id", id);
+            db.Database.ExecuteSqlCommand(query, param);
+
+
+            return RedirectToAction("Show/" + PostID);
+
+
+        }
+
+        public ActionResult EditComment(int id)
+        {
+            string query = "select * from ForumReplies where ReplyID = @id";
+            var parameter = new SqlParameter("@id", id);
+            ForumReply selectedreply = db.ForumReplies.SqlQuery(query, parameter).FirstOrDefault();
+
+            return View(selectedreply);
+
+
+        }
+
+        //UPDATE that actually changes the query
+        [HttpPost]
+        public ActionResult UpdateComment(int id, int PostID, string replyContent)
+        {
+
+            //Getting the current time of update
+            DateTime currentTime = DateTime.Now;
+
+            Debug.WriteLine("I am trying to edit the follwoing values: " + replyContent + ", " + currentTime + ", "+ PostID);
+
+            string query = "update ForumReplies set ReplyContent=@replyContent, ReplyDate=@currentTime where ReplyID=@id";
+            SqlParameter[] sqlparams = new SqlParameter[3];
+            sqlparams[0] = new SqlParameter("@replyContent", replyContent);
+            sqlparams[1] = new SqlParameter("@currentTime", currentTime);
+            sqlparams[2] = new SqlParameter("@id", id);
+
+
+            db.Database.ExecuteSqlCommand(query, sqlparams);
+
+
+            return RedirectToAction("Show/" + PostID);
+        }
+
+
+
     }
 }
