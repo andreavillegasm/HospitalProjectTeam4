@@ -1,0 +1,46 @@
+﻿@model List<HospitalProjectTeam4.Models.LostFound>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List of lost and found item</h2>
+<a href="Add" style="float:right" class="btn btn-success">Add report</a>
+<form method="get" action="List">
+    <select name="sel" class="form-control">
+        <option value="">--All--</option>
+        <option value="Lost">Lost</option>
+        <option value="Found">Found</option>
+        <option value="Stolen">Stolen</option>
+    </select>
+    <input type="submit" class="btn btn-success" />
+</form>
+<table class="table table-striped">
+    <tr>
+        <th>Lost or found</th>
+        <th>Item</th>
+        <th>Date</th>
+        <th>Category</th>
+        <th>Color</th>
+        <th>Person to contact</th>
+        <th>Small note</th>
+        <th>Reporter</th>
+        <th colspan="2" style="text-align:center">Action</th>
+    </tr>
+    @foreach(var items in Model)
+    {
+       <tr>
+            <td>@items.LostorFound</td>
+            <td>@items.LostFoundItem</td>
+            <td>@items.LostFoundDate</td>
+            <td>@items.LostFoundCategory</td>
+            <td>@items.LostFoundColor</td>
+            <td>@items.LostFoundPerson</td>
+            <td>@items.LostFoundNote</td>
+            <td>@items.Patient.PatientFName</td>
+            <td><a href="Update/@items.LostFoundID">Update</a></td>
+            <td><a href="Delete/@items.LostFoundID">Delete</a></td>
+
+        </tr>
+    }
+</table>
+

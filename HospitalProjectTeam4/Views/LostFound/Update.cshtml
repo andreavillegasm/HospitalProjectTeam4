@@ -1,0 +1,86 @@
+﻿@model HospitalProjectTeam4.Models.LostFound
+    @{
+        ViewBag.Title = "Update";
+    }
+
+<h2>Update your item</h2>
+<form action="/LostFound/Update/@Model.LostFoundID" method="post">
+    <div class="container-fluid">
+        <div>
+            <p>I am reporting that I:</p>
+            <select class="form-control" name="lostorfound">
+                @{
+                    string selected = "";
+                    if (Model.LostorFound == "Lost") { selected = "selected"; }
+                }
+                <option value="Lost" @selected>Lost</option>
+                @{
+                    selected = "";
+                    if (Model.LostorFound == "Found") { selected = "selected"; }
+                }
+                <option value="Found" @selected>Found</option>
+                @{
+                    selected = "";
+                    if (Model.LostorFound == "Stolen") { selected = "selected"; }
+                }
+                <option value="Stolen" @selected>Stolen</option>
+            </select>
+        </div>
+        <div>
+            <p>Item:</p>
+        </div>
+        <div>
+            <input type="text" name="item" class="form-control" value="@Model.LostFoundItem" />
+        </div>
+        <div>
+            <p>Category</p>
+        </div>
+        <div>
+            <select class="form-control" name="category">
+                @{
+                    selected = "";
+                    if (Model.LostFoundCategory == "Jewellery") { selected = "selected"; }
+                }
+                <option value="Jewellery" @selected>Jewellery</option>
+                @{
+                    selected = "";
+                    if (Model.LostFoundCategory == "Mobile phone") { selected = "selected"; }
+                }
+                <option value="Mobile phone" @selected>Mobile phone</option>
+                @{
+                    selected = "";
+                    if (Model.LostFoundCategory == "Laptop") { selected = "selected"; }
+                }
+                <option value="Laptop" @selected>Laptop</option>
+                @{
+                    selected = "";
+                    if (Model.LostFoundCategory == "Other") { selected = "selected"; }
+                }
+                <option value="Other" @selected>Other</option>
+            </select>
+        </div>
+        <div>
+            <p>Color</p>
+        </div>
+        <div>
+            <input type="text" name="color" class="form-control" value="@Model.LostFoundColor" />
+        </div>
+        <div>
+            <p>Person to contact</p>
+        </div>
+        <div>
+            <input type="text" name="contactno" class="form-control" value="@Model.LostFoundPerson"/>
+        </div>
+        <div>
+            <p>Small note</p>
+        </div>
+        <div>
+            <textarea name="note" cols="8" rows="5" class="form-control">@Model.LostFoundNote</textarea>
+        </div>
+        <div>
+            <input type="submit" class="btn btn-danger" value="Update report" />
+            <a href="/LostFound/List" class="btn btn-success">Cancel</a>
+        </div>
+    </div>
+</form>
+

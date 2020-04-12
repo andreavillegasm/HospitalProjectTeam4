@@ -45,6 +45,7 @@ namespace HospitalProjectTeam4.Controllers
             book.CurrentDate = now.ToString();
             book.BookingDate = datebooking;
             book.PatientID = patientid;
+
             db.Bookings.Add(book);
             db.SaveChanges();
             //return View();
