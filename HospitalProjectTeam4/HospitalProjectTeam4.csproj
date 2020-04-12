@@ -215,6 +215,10 @@
     <Compile Include="Migrations\202004120304552_zz1.designer.cs">
       <DependentUpon>202004120304552_zz1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004120442400_dbcontext-fixed.cs" />
+    <Compile Include="Migrations\202004120442400_dbcontext-fixed.designer.cs">
+      <DependentUpon>202004120442400_dbcontext-fixed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Booking.cs" />
@@ -350,6 +354,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004120304552_zz1.resx">
       <DependentUpon>202004120304552_zz1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004120442400_dbcontext-fixed.resx">
+      <DependentUpon>202004120442400_dbcontext-fixed.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
