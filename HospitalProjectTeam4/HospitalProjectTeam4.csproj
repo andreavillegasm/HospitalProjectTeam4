@@ -172,6 +172,7 @@
     <Compile Include="Controllers\BookingAppointmentController.cs" />
     <Compile Include="Controllers\ForumPostController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LostFoundController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RecordController.cs" />
     <Compile Include="Data\HospitalProjectContext.cs" />
@@ -209,6 +210,10 @@
     <Compile Include="Migrations\202004112013201_zz.cs" />
     <Compile Include="Migrations\202004112013201_zz.designer.cs">
       <DependentUpon>202004112013201_zz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004120304552_zz1.cs" />
+    <Compile Include="Migrations\202004120304552_zz1.designer.cs">
+      <DependentUpon>202004120304552_zz1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -299,7 +304,7 @@
     <Content Include="Views\ForumPost\Update.cshtml" />
     <Content Include="Views\BookingAppointment\Show.cshtml" />
     <Content Include="Views\BookingAppointment\Update.cshtml" />
-    <Content Include="Views\ForumPost\EditComment.cshtml" />
+    <Content Include="Views\LostFound\Add.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -342,6 +347,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004112013201_zz.resx">
       <DependentUpon>202004112013201_zz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004120304552_zz1.resx">
+      <DependentUpon>202004120304552_zz1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
