@@ -170,6 +170,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BookingAppointmentController.cs" />
+    <Compile Include="Controllers\DoctorController.cs" />
     <Compile Include="Controllers\ForumPostController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LostFoundController.cs" />
@@ -234,6 +235,10 @@
     <Compile Include="Migrations\202004122051475_foreignkeys-added.cs" />
     <Compile Include="Migrations\202004122051475_foreignkeys-added.designer.cs">
       <DependentUpon>202004122051475_foreignkeys-added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004122153519_name-changed-doctors.cs" />
+    <Compile Include="Migrations\202004122153519_name-changed-doctors.designer.cs">
+      <DependentUpon>202004122153519_name-changed-doctors.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -330,6 +335,7 @@
     <Content Include="Views\LostFound\List.cshtml" />
     <Content Include="Views\LostFound\Update.cshtml" />
     <Content Include="Views\News\Add.cshtml" />
+    <Content Include="Views\Doctor\Add.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -390,6 +396,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004122051475_foreignkeys-added.resx">
       <DependentUpon>202004122051475_foreignkeys-added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004122153519_name-changed-doctors.resx">
+      <DependentUpon>202004122153519_name-changed-doctors.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
