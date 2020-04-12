@@ -1,0 +1,19 @@
+﻿@model HospitalProjectTeam4.Models.ForumReply
+@{
+    ViewBag.Title = "EditComment";
+}
+
+    <div class="container">
+        <h2>Edit Comment</h2>
+        <form method="post" action="/ForumPost/UpdateComment/@Model.ReplyID">
+            <div class="form-group">
+                <input type="text" class="form-control" id="replyContent" name="replyContent" value="@Model.ReplyContent">
+                <input type="hidden" name ="PostID" id="PostID" value="@Model.PostID"/>
+            </div>
+            <button type="submit" class="btn btn-info">Update Comment</button>
+            <div>
+                <a href="/ForumPost/Show/@Model.PostID">Cancel</a>
+            </div>
+        </form>
+    </div>
+
