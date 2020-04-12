@@ -1,0 +1,38 @@
+﻿@model HospitalProjectTeam4.Models.ForumPost
+@{
+    ViewBag.Title = "Update";
+}
+
+<div class="container">
+    <h2>Update Post</h2>
+    <form method="post" action="/ForumPost/Update/@Model.PostID">
+        <div class="form-group">
+            <label for="postingTitle">Posting Title</label>
+            <input type="text" class="form-control" id="postingTitle" name="postingTitle" value="@Model.PostingTitle">
+        </div>
+        <div class="form-group">
+            <label for="postingCateogry">Posting Cateogory</label>
+
+            <select class="form-control" name="postingCategory" id="postingCategory">
+
+                <option value="general health">General Health</option>
+                <option value="mental health">Mental Health</option>
+                <option value="brain and nerves">Brain and Nerves</option>
+                <option value="women's health">Women's Health</option>
+                <option value="operations and surgical procedures">Operations and Surgical Procedures</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-check-label" for="postingContent">Posting Content</label>
+            <input type="text" class="form-control" id="postingContent" name="postingContent" value="@Model.PostingContent">
+        </div>
+
+
+        <button type="submit" class="btn btn-info">Update Post</button>
+        <div>
+            <a href="/ForumPost/Show/@Model.PostID">Cancel</a>
+        </div>
+    </form>
+</div>
+

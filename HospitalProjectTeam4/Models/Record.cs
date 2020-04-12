@@ -31,5 +31,6 @@ namespace HospitalProjectTeam4.Models
         [ForeignKey("BookingID")]
 
         public virtual Booking Booking { get; set; }
+
     }
 }

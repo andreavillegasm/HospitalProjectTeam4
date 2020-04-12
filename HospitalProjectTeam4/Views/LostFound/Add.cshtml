@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewBag.Title = "Add";
+}
+<div>
+    <a href="List" style="float:right" class="btn btn-success">List of reports</a>
+</div>
+<h2>Add Lost and found item</h2>
+<hr />
+<form action="Add" method="post">
+    <div class="container-fluid">
+        <div>
+            <p>I am reporting that I:</p>
+            <select class="form-control" name="lostorfound">
+                <option value="">--Select--</option>
+                <option value="Lost">Lost</option>
+                <option value="Found">Found</option>
+                <option value="Stolen">Stolen</option>
+            </select>
+        </div>
+        <div>
+            <p>Item:</p>
+        </div>
+        <div>
+            <input type="text" name="item" class="form-control" />
+        </div>
+        <div>
+            <p>Category</p>
+        </div>
+        <div>
+            <select class="form-control" name="category">
+                <option>--Select--</option>
+                <option value="Jewellery">Jewellery</option>
+                <option value="Mobile phone">Mobile phone</option>
+                <option value="Laptop">Laptop</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+        <div>
+            <p>Color</p>
+        </div>
+        <div>
+            <input type="text" name="color" class="form-control" />
+        </div>
+        <div>
+            <p>Person to contact</p>
+        </div>
+        <div>
+            <input type="text" name="contactno" class="form-control" />
+        </div>
+        <div>
+            <p>Small note</p>
+        </div>
+        <div>
+            <textarea name="note" cols="8" rows="5" class="form-control"></textarea>
+        </div>
+        <div>
+            <input type="submit" class="btn btn-primary" value="Add report" />
+        </div>
+    </div>
+    
+</form>
+

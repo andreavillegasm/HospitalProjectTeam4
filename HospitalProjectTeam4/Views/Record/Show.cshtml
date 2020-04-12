@@ -4,6 +4,10 @@
 }
     <div class="container" id="show-record">
         <h2 class="title">Record Details</h2>
+        <div class="edit-buttons">
+            <a class="btn btn-warning" href="/Record/Update/@Model.recordinfo.RecordID">Edit </a>
+            <a class="btn btn-danger" href="/Record/DeleteConfirm/@Model.recordinfo.RecordID"> Delete</a>
+        </div>
         <div>@Model.recordinfo.RecordName</div>
         <small>@Model.bookinginfo.BookingDate</small>
         <div>@Model.recordinfo.RecordType</div>
@@ -15,13 +19,14 @@
             }
         }
 
+
         <!--Check if Record has an attachment -->
         <div class="file-attach">
             @{
                 if (@Model.recordinfo.HasFile == 1)
                 {
-                    <iframe src="../../Content/Records/@(Model.recordinfo.RecordID).@(Model.recordinfo.FileExtension)" width="100%" height="500px">
-                        </iframe>
+                    <iframe src="../../Content/Records/@(Model.recordinfo.RecordID).@(Model.recordinfo.FileExtension)" width="100%" height="1000px">
+                    </iframe>
                 }
             }
 

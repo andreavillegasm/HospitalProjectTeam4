@@ -1,0 +1,38 @@
+﻿@model List<HospitalProjectTeam4.Models.Booking>
+@using Microsoft.AspNet.Identity
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>All bookings</h2>
+<div>
+    <form action="Add">
+        <input style="float:right" type="submit" class="btn btn-primary" value="Add booking" />
+    </form>
+</div>
+<div>
+    @User.Identity.GetUserName()
+</div>
+<table class="table table-striped">
+    <tr>
+        <th>Doctor name</th>
+        <th>Booking date</th>
+        <th>Patient name</th>
+        <th colspan="2" style="text-align:center">Action</th>
+    </tr>
+
+    @{
+        foreach (var books in Model)
+        {
+            <tr>
+                <td><a href="Show/@books.BookingID">@books.Doctor.DoctorFName, @books.Doctor.DoctorLNmae</a></td>
+                <td><a>@books.BookingDate</a></td>
+                <td>@books.Patient.PatientFName, @books.Patient.PatientLNmae</td>
+                <td><a href="Update/@books.BookingID">Update</a></td>
+                <td><a href="Delete/@books.BookingID">Delete</a></td>
+            </tr>
+            //<div>@books.Doctor.DoctorFName</div>
+            //<div>@books.BookingDate</div>
+        }
+    }
+</table>

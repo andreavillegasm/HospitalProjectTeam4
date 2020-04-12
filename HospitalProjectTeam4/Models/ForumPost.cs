@@ -10,27 +10,30 @@ using HospitalProjectTeam4.Data;
 
 namespace HospitalProjectTeam4.Models
 {
-    public class Booking
+    public class ForumPost
     {
         [Key]
-        public int BookingID { get; set; }
-        public string CurrentDate { get; set; }
-        public string BookingDate { get; set; }
+        public int PostID { get; set; }
 
-        //Representing the "One" in (Many Bookings to one Patient)
+        //Representing the "One" in (One Patient to Many Posts)
         public int PatientID { get; set; }
         [ForeignKey("PatientID")]
 
         public virtual Patient Patient { get; set; }
 
-        //Representing the "One" in (Many Bookings to one Doctor)
-        public int DoctorID { get; set; }
-        [ForeignKey("DoctorID")]
+        public DateTime PostingDate { get; set; }
+        public string PostingTitle { get; set; }
+        public string PostingContent { get; set; }
+        public int PostingState { get; set; }
 
-        public virtual Doctor Doctor { get; set; }
+        public string PostingCategory { get; set; }
+
+        //Representing the "Many" in (Many Replies to one ForumPost)
+        public ICollection<ForumReply> ForumReply { get; set; }
 
 
-        //Representing the "Many" in (One Booking to many Records)
-        public ICollection<Record> Record { get; set; }
+
+
+
     }
 }

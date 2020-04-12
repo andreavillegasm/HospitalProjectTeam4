@@ -20,9 +20,13 @@ namespace HospitalProjectTeam4.Models
         public DateTime PatientBirthDate { get; set; }
         public string PatientEmail { get; set; }
         public string PatientPhone { get; set; }
+
         public string PatientAltPhone { get; set; }
 
         //Representing the "Many" in (Many Bookings to one Patient)
         public ICollection<Booking> Booking { get; set; }
+
+        //Representing the "Many" in (Many Posts to one Patient)
+        public ICollection<ForumPost> ForumPost { get; set; }
     }
 }

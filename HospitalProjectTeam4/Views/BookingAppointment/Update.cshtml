@@ -1,0 +1,48 @@
+﻿@model HospitalProjectTeam4.Models.ViewModels.UpdateBooking
+@{
+    ViewBag.Title = "Update";
+}
+
+<h2>Update nthe booking</h2>
+
+
+<hr />
+<form method="post" action="#">
+    <div class="col-md-2">
+        Please select the doctor:
+    </div>
+    <div class="col-md-10">
+        <select name="doctorid" class="form-control">
+            @foreach (var doc in Model.Doctors)
+            {
+                string selected = "";
+                if (Model.Booking.DoctorID == doc.DoctorID) { selected = "selected"; }
+                <option value="@doc.DoctorID" @selected>@doc.DoctorFName</option>
+
+            }
+        </select>
+    </div>
+    <div class="col-md-2">
+        Please enter date:
+    </div>
+    <div class="col-md-10">
+        <input type="text" class="form-control" name="datebooking" value="@Model.Booking.BookingDate"/>
+    </div>
+    <div class="col-md-2">
+        Please select patient:
+    </div>
+    <div class="col-md-10">
+
+        <select name="patientid" class="form-control">
+            @foreach (var pat in Model.Patients)
+            {
+                string selected = "";
+                if (Model.Booking.PatientID == pat.PatientID) { selected = "selected"; }
+                <option value="@pat.PatientID" @selected>@pat.PatientFName</option>
+            }
+        </select>
+    </div>
+    <div class="col-md-3">
+        <input type="submit" class="btn btn-success" name="book" />
+    </div>
+</form>

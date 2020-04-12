@@ -4,27 +4,24 @@
 }
     <div class="container">
         <h2 class="title">List</h2>
-        <div class="edit-buttons">
-            <a>Edit</a>
-            <a>Delete</a>
-        </div>
+        <a class="btn btn-success" href="/Record/Add">Add a Record</a>
+
         <div class="list-group">
 
             @{
                 foreach (var record in @Model.records)
                 {
-                        <a href="Show/@record.RecordID" class="list-group-item list-group-item-action">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h3 class="mb-1">@record.RecordName</h3>
-                                <small class="mb-1">Date </small>
-                            </div>
-                            <p class="mb-1">@record.RecordContent</p>
-                        </a> 
+                    <a href="Show/@record.RecordID" class="list-group-item list-group-item-action">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h3 class="mb-1">@record.RecordName</h3>
+                        </div>
+                        <p class="mb-1">@record.RecordContent</p>
+                    </a>
 
                 }
 
 
             }
         </div>
-       
+
     </div>
