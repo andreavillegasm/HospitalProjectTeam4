@@ -18,13 +18,13 @@ namespace HospitalProjectTeam4.Models
         public string BookingDate { get; set; }
 
         //Representing the "One" in (Many Bookings to one Patient)
-        public int PatientID { get; set; }
+        public string PatientID { get; set; }
         [ForeignKey("PatientID")]
 
         public virtual Patient Patient { get; set; }
 
         //Representing the "One" in (Many Bookings to one Doctor)
-        public int DoctorID { get; set; }
+        public string DoctorID { get; set; }
         [ForeignKey("DoctorID")]
 
         public virtual Doctor Doctor { get; set; }

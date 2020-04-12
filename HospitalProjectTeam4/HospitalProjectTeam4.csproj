@@ -219,6 +219,22 @@
     <Compile Include="Migrations\202004121420497_news.designer.cs">
       <DependentUpon>202004121420497_news.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004121924400_dropforeignkeys.cs" />
+    <Compile Include="Migrations\202004121924400_dropforeignkeys.designer.cs">
+      <DependentUpon>202004121924400_dropforeignkeys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004121931048_dropping-tables.cs" />
+    <Compile Include="Migrations\202004121931048_dropping-tables.designer.cs">
+      <DependentUpon>202004121931048_dropping-tables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004121956445_useridentitymodels-created.cs" />
+    <Compile Include="Migrations\202004121956445_useridentitymodels-created.designer.cs">
+      <DependentUpon>202004121956445_useridentitymodels-created.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004122051475_foreignkeys-added.cs" />
+    <Compile Include="Migrations\202004122051475_foreignkeys-added.designer.cs">
+      <DependentUpon>202004122051475_foreignkeys-added.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Booking.cs" />
@@ -362,6 +378,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004121420497_news.resx">
       <DependentUpon>202004121420497_news.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004121924400_dropforeignkeys.resx">
+      <DependentUpon>202004121924400_dropforeignkeys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004121931048_dropping-tables.resx">
+      <DependentUpon>202004121931048_dropping-tables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004121956445_useridentitymodels-created.resx">
+      <DependentUpon>202004121956445_useridentitymodels-created.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004122051475_foreignkeys-added.resx">
+      <DependentUpon>202004122051475_foreignkeys-added.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

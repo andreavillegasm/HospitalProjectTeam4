@@ -12,6 +12,7 @@ namespace HospitalProjectTeam4.Controllers
 {
     public class LostFoundController : Controller
     {
+        
         // GET: LostFound
         private HospitalProjectContext db = new HospitalProjectContext();
         public ActionResult Index()
@@ -34,7 +35,7 @@ namespace HospitalProjectTeam4.Controllers
             lostandfound.LostFoundColor = color;
             lostandfound.LostFoundPerson = contactno;
             lostandfound.LostFoundNote = note;
-            lostandfound.PatientID = 1;
+            lostandfound.PatientID = 1.ToString();
             db.lostFounds.Add(lostandfound);
             db.SaveChanges();
             return RedirectToAction("List");

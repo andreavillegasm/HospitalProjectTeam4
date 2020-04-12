@@ -15,6 +15,7 @@ namespace HospitalProjectTeam4.Controllers
 {
     public class BookingAppointmentController : Controller
     {
+        
         // GET: BookingAppointment
 
         private HospitalProjectContext db = new HospitalProjectContext();
@@ -34,7 +35,7 @@ namespace HospitalProjectTeam4.Controllers
             return View(viewmodel);
         }
         [HttpPost]
-        public ActionResult Add(int doctorid,string datebooking,int patientid)
+        public ActionResult Add(string doctorid,string datebooking,string patientid)
         {
             //Debug.WriteLine(doctorid + datebooking + patientid);
             //string BookingTime = "1200";
@@ -78,7 +79,7 @@ namespace HospitalProjectTeam4.Controllers
             return View(viewmodel);
         }
         [HttpPost]
-        public ActionResult Update(int id, int doctorid, string datebooking, int patientid)
+        public ActionResult Update(int id, string doctorid, string datebooking, string patientid)
         {
             
 
@@ -99,5 +100,6 @@ namespace HospitalProjectTeam4.Controllers
             db.Database.ExecuteSqlCommand(query, param);
             return RedirectToAction("List");
         }
+        
     }
 }

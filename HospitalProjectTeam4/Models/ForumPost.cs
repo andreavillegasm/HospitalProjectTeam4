@@ -16,7 +16,7 @@ namespace HospitalProjectTeam4.Models
         public int PostID { get; set; }
 
         //Representing the "One" in (One Patient to Many Posts)
-        public int PatientID { get; set; }
+        public string PatientID { get; set; }
         [ForeignKey("PatientID")]
 
         public virtual Patient Patient { get; set; }
