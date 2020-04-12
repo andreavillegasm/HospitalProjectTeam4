@@ -13,7 +13,7 @@ namespace HospitalProjectTeam4.Models
     {
         [Key]
         public int LostFoundID { get; set; }
-
+        public string LostorFound { get; set; }
         public string LostFoundItem { get; set; }
         public string LostFoundDate { get; set; }
         public string LostFoundCategory { get; set; }

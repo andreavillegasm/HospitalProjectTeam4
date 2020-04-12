@@ -18,11 +18,6 @@ namespace HospitalProjectTeam4.Models
             return userIdentity;
         }
 
-        public string userfirstname { get; set; }
-        public string usermiddlename { get; set; }
-        public string userlastname { get; set; }
-        public string userdob { get; set; }
-        public string userrole { get; set; }
     }
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
