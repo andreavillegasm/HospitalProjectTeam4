@@ -49,7 +49,7 @@ namespace HospitalProjectTeam4.Controllers
 
         public ActionResult Add()
         {
-            //I don't need any information to do add of species.
+            //I don't need any information to do add of category.
             return View();
         }
         [HttpPost]
@@ -106,7 +106,7 @@ namespace HospitalProjectTeam4.Controllers
             db.Database.ExecuteSqlCommand(query, param);
 
 
-            //for the sake of referential integrity, unset the species for all pets
+            //for the sake of referential integrity, unset the categories for all news
             string refquery = "update news set CategoryID = '' where CategoryID=@id";
             db.Database.ExecuteSqlCommand(refquery, param); //same param as before
 

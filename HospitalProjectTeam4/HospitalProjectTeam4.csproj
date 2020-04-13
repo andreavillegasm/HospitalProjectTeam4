@@ -225,6 +225,8 @@
     <Content Include="App_Data\aspnet-HospitalProjectTeam4-20200402125951_log.ldf">
       <DependentUpon>aspnet-HospitalProjectTeam4-20200402125951.mdf</DependentUpon>
     </Content>
+    <Content Include="bin\HospitalProjectTeam4.dll" />
+    <Content Include="bin\HospitalProjectTeam4.pdb" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -331,6 +333,7 @@
     <Content Include="Views\News\Show.cshtml" />
     <Content Include="Views\News\Update.cshtml" />
     <Content Include="Views\Registration\Add.cshtml" />
+    <Content Include="Views\BookingAppointment\ListMyBooking.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Records\" />
