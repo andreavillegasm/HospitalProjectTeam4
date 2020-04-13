@@ -12,11 +12,12 @@ namespace HospitalProjectTeam4.Models
 {
     public class Doctor
     {
-        [Key]
-        public int DoctorID { get; set; }
+        [Key, ForeignKey("ApplicationUser")]
+        public string DoctorID { get; set; }
+        public virtual ApplicationUser ApplicationUser { get; set; }
         public string DoctorFName { get; set; }
-        public string DoctorMNmae { get; set; }
-        public string DoctorLNmae { get; set; }
+        public string DoctorMName { get; set; }
+        public string DoctorLName { get; set; }
         public DateTime DoctorBirthDate { get; set; }
         public string DoctorEmail { get; set; }
         public string DoctorPhone { get; set; }

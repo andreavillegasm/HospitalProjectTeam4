@@ -170,6 +170,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BookingAppointmentController.cs" />
+    <Compile Include="Controllers\DoctorController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\ForumPostController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -220,14 +221,6 @@
     <Compile Include="Migrations\202004121420497_news.cs" />
     <Compile Include="Migrations\202004121420497_news.designer.cs">
       <DependentUpon>202004121420497_news.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004130055325_newspublish.cs" />
-    <Compile Include="Migrations\202004130055325_newspublish.designer.cs">
-      <DependentUpon>202004130055325_newspublish.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004130116334_newspic.cs" />
-    <Compile Include="Migrations\202004130116334_newspic.designer.cs">
-      <DependentUpon>202004130116334_newspic.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -324,16 +317,7 @@
     <Content Include="Views\LostFound\Add.cshtml" />
     <Content Include="Views\LostFound\List.cshtml" />
     <Content Include="Views\LostFound\Update.cshtml" />
-    <Content Include="Views\News\New.cshtml" />
-    <Content Include="Views\News\List.cshtml" />
-    <Content Include="Views\News\Show.cshtml" />
-    <Content Include="Views\News\Update.cshtml" />
-    <Content Include="Views\News\DeleteConfirm.cshtml" />
-    <Content Include="Views\Category\List.cshtml" />
-    <Content Include="Views\Category\Add.cshtml" />
-    <Content Include="Views\Category\Show.cshtml" />
-    <Content Include="Views\Category\Update.cshtml" />
-    <Content Include="Views\Category\DeleteConfirm.cshtml" />
+    <Content Include="Views\News\Add.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -382,12 +366,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004121420497_news.resx">
       <DependentUpon>202004121420497_news.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004130055325_newspublish.resx">
-      <DependentUpon>202004130055325_newspublish.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004130116334_newspic.resx">
-      <DependentUpon>202004130116334_newspic.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

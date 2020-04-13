@@ -12,8 +12,9 @@ namespace HospitalProjectTeam4.Models
 {
     public class Patient
     {
-        [Key]
-        public int PatientID { get; set; }
+        [Key, ForeignKey("ApplicationUser")]
+        public string PatientID { get; set; }
+        public virtual ApplicationUser ApplicationUser { get; set; }
         public string PatientFName { get; set; }
         public string PatientMNmae { get; set; }
         public string PatientLNmae { get; set; }

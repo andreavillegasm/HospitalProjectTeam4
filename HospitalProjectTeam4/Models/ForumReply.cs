@@ -17,8 +17,9 @@ namespace HospitalProjectTeam4.Models
 
         //Representing the "One" in (One User to Many Replies)
         //Link it to the users table rather than doctors or patients
-        //public int PatientID { get; set; }
-        //[ForeignKey("PatientID")]
+        public string PatientID { get; set; }
+        [ForeignKey("PatientID")]
+        public virtual Patient Patient { get; set; }
 
         //Representing the "One" in (One Post to Many Replies)
         public int PostID { get; set; }
