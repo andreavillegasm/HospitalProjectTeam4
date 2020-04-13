@@ -179,6 +179,7 @@
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\PatientController.cs" />
     <Compile Include="Controllers\RecordController.cs" />
+    <Compile Include="Controllers\RegistrationController.cs" />
     <Compile Include="Data\HospitalProjectContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -190,6 +191,10 @@
     <Compile Include="Migrations\202004131825595_fixed-names.cs" />
     <Compile Include="Migrations\202004131825595_fixed-names.designer.cs">
       <DependentUpon>202004131825595_fixed-names.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004132003368_zam.cs" />
+    <Compile Include="Migrations\202004132003368_zam.designer.cs">
+      <DependentUpon>202004132003368_zam.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -214,6 +219,10 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\aspnet-HospitalProjectTeam4-20200402125951.mdf" />
+    <Content Include="App_Data\aspnet-HospitalProjectTeam4-20200402125951_log.ldf">
+      <DependentUpon>aspnet-HospitalProjectTeam4-20200402125951.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -222,8 +231,16 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="obj\Debug\HospitalProjectTeam4.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\HospitalProjectTeam4.dll" />
+    <Content Include="obj\Debug\HospitalProjectTeam4.pdb" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\HospitalProjectTeam4.csproj.CopyComplete" />
+    <Content Include="obj\Debug\HospitalProjectTeam4.csproj.CoreCompileInputs.cache" />
+    <Content Include="obj\Debug\HospitalProjectTeam4.csproj.GenerateResource.cache" />
+    <Content Include="obj\Debug\HospitalProjectTeam4.csprojAssemblyReference.cache" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -286,7 +303,6 @@
     <Content Include="Views\LostFound\Add.cshtml" />
     <Content Include="Views\LostFound\List.cshtml" />
     <Content Include="Views\LostFound\Update.cshtml" />
-    <Content Include="Views\News\Add.cshtml" />
     <Content Include="Views\Category\Add.cshtml" />
     <Content Include="Views\Category\DeleteConfirm.cshtml" />
     <Content Include="Views\Category\List.cshtml" />
@@ -298,11 +314,11 @@
     <Content Include="Views\News\New.cshtml" />
     <Content Include="Views\News\Show.cshtml" />
     <Content Include="Views\News\Update.cshtml" />
-    <Content Include="Views\Patient\Add.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Content\Records\" />
+    <Folder Include="obj\Debug\TempPE\" />
+    <Folder Include="Wireframes\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -320,9 +336,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202004131435076_initial.resx">
       <DependentUpon>202004131435076_initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004131825595_fixed-names.resx">
-      <DependentUpon>202004131825595_fixed-names.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

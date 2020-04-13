@@ -43,7 +43,7 @@ namespace HospitalProjectTeam4.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> Add(string UserEmail, string UserPassword, string DoctorFName, string DoctorMName, string DoctorLName, DateTime DoctorDOB, string DoctorPhone, string DoctorAltPhone)
+        public async Task<ActionResult> Add(string UserEmail, string UserPassword, string DoctorFName, string DoctorMName, string DoctorLName, string DoctorDOB, string DoctorPhone, string DoctorAltPhone)
         {
             //before creating a doctor, we would like to create a user.
             //this user will be linked with a doctor.
