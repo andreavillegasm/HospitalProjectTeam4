@@ -186,6 +186,10 @@
     <Compile Include="Migrations\202004131435076_initial.designer.cs">
       <DependentUpon>202004131435076_initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004132003368_zam.cs" />
+    <Compile Include="Migrations\202004132003368_zam.designer.cs">
+      <DependentUpon>202004132003368_zam.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Booking.cs" />
@@ -322,6 +326,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202004131435076_initial.resx">
       <DependentUpon>202004131435076_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004132003368_zam.resx">
+      <DependentUpon>202004132003368_zam.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="obj\Debug\HospitalProjectTeam4.Migrations.initial.resources" />
   </ItemGroup>
