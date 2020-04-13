@@ -217,8 +217,16 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="obj\Debug\HospitalProjectTeam4.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\HospitalProjectTeam4.dll" />
+    <Content Include="obj\Debug\HospitalProjectTeam4.pdb" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\HospitalProjectTeam4.csproj.CopyComplete" />
+    <Content Include="obj\Debug\HospitalProjectTeam4.csproj.CoreCompileInputs.cache" />
+    <Content Include="obj\Debug\HospitalProjectTeam4.csproj.GenerateResource.cache" />
+    <Content Include="obj\Debug\HospitalProjectTeam4.csprojAssemblyReference.cache" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -281,17 +289,22 @@
     <Content Include="Views\LostFound\Add.cshtml" />
     <Content Include="Views\LostFound\List.cshtml" />
     <Content Include="Views\LostFound\Update.cshtml" />
-    <Content Include="Views\News\Add.cshtml" />
     <Content Include="Views\Category\Add.cshtml" />
     <Content Include="Views\Category\DeleteConfirm.cshtml" />
     <Content Include="Views\Category\List.cshtml" />
     <Content Include="Views\Category\Show.cshtml" />
     <Content Include="Views\Category\Update.cshtml" />
     <Content Include="Views\Doctor\Add.cshtml" />
+    <Content Include="Views\News\DeleteConfirm.cshtml" />
+    <Content Include="Views\News\List.cshtml" />
+    <Content Include="Views\News\New.cshtml" />
+    <Content Include="Views\News\Show.cshtml" />
+    <Content Include="Views\News\Update.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\Records\" />
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -310,6 +323,7 @@
     <EmbeddedResource Include="Migrations\202004131435076_initial.resx">
       <DependentUpon>202004131435076_initial.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="obj\Debug\HospitalProjectTeam4.Migrations.initial.resources" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
