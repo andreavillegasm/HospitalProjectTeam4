@@ -8,6 +8,10 @@
 <div class="navbar">
     <a class="navlink" href="/News/New">Add New</a>
 </div>
+<form method="GET" action="/News/List">
+    <input type="text" id="newssearchkey" name="newssearchkey" />
+    <input type="submit" value="Search" />
+</form>
 <div class="tilecontainer">
     @{
         foreach (var News in Model)

@@ -23,27 +23,40 @@ namespace HospitalProjectTeam4.Controllers
     public class NewsController : Controller
     {
         private HospitalProjectContext db = new HospitalProjectContext();
-
+        //to use database
         // GET: News
         public ActionResult Index()
         {
             return View();
         }
-        public ActionResult List()
+        
+        public ActionResult List(string newssearchkey)
         {
-            List<News> News;
-            News = db.News.ToList();
-            return View(News);
+            Debug.WriteLine("The parameter is " + newssearchkey);
+            //for searchkey
+            string query = "Select * from news";
+            if (newssearchkey != "")
+            {
+                query = query + " where NewsName like '%" + newssearchkey + "%'";
+            }
+
+            //query to get the list of all the news in the system.
+            List<News> mynews = db.News.SqlQuery(query).ToList();
+
+            return View(mynews);
         }
 
-        // GET: News/Details/5
+        // GET: details of the news with id =id
+        //news show method
         public ActionResult Show(int? id)
         {
+            //if the id is null, then return this message of the bad request.
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            // News news = db.News.Find(id); //EF 6 technique
+            // News news = db.News.Find(id); 
+            //if id exists, but the news does not exist, then return this message.
             News News = db.News.SqlQuery("select * from news where newsid=@NewsID", new SqlParameter("@NewsID", id)).FirstOrDefault();
             if (News == null)
             {
@@ -54,16 +67,18 @@ namespace HospitalProjectTeam4.Controllers
 
         }
 
-        //THE [HttpPost] Means that this method will only be activated on a POST form submit to the following URL
         //URL: /News/Add
         [HttpPost]
         public ActionResult Add(string NewsName, DateTime NewsDate, string NewsPublish, string NewsDescription, int CategoryID, HttpPostedFileBase NewsPic, int HasPic)
         {
-            //STEP 1: PULL DATA! The data is access as arguments to the method. Make sure the datatype is correct!
-            //The variable name  MUST match the name attribute described in Views/Pet/Add.cshtml
+            //the above are taken from the addnews form and should alwasys match.
+            //otherwise the following method will not work.
 
-            //Tests are very useul to determining if you are pulling data correctly!
-            //Debug.WriteLine("Want to create a pet with name " + PetName + " and weight " + PetWeight.ToString()) ;
+
+            //Debug.WriteLine("Want to create a news with name " + NewsName + " and description " + NewsDescription) ;
+            //the debug writeline is for testing, we don't need all the parameters.Some of them are fine.
+
+            //query to add a new news into the database.
 
             //STEP 2: FORMAT QUERY! the query will look something like "insert into () values ()"...
             string query = "insert into news (NewsName, NewsDate, NewsPublish, NewsDescription, CategoryID, HasPic) values (@NewsName,@NewsDate,@NewsPublish,@NewsDescription,@CategoryID, @HasPic)";
@@ -77,23 +92,20 @@ namespace HospitalProjectTeam4.Controllers
             sqlparams[5] = new SqlParameter("@HasPic", HasPic);
 
             //db.Database.ExecuteSqlCommand will run insert, update, delete statements
-            //db.Pets.SqlCommand will run a select statement, for example.
+            //db.News.SqlCommand will run a select statement, for example.
             db.Database.ExecuteSqlCommand(query, sqlparams);
 
 
-            //run the list method to return to a list of pets so we can see our new one!
+            //run the list method to return to a list of news so we can see our new one!
             return RedirectToAction("List");
         }
 
 
         public ActionResult New()
         {
-            //STEP 1: PUSH DATA!
-            //What data does the Add.cshtml page need to display the interface?
-            //A list of species to choose for a pet
-
-            //alternative way of writing SQL -- will learn more about this week 4
-            //List<Species> Species = db.Species.ToList();
+            //this is get the information that we want to provide the user in order
+            //for the addition of the news into the system.We need categorynames in the 
+            //dropdown list.
 
             List<Category> categories = db.Categories.SqlQuery("select * from categories").ToList();
 
@@ -102,13 +114,14 @@ namespace HospitalProjectTeam4.Controllers
 
         public ActionResult Update(int id)
         {
-            //need information about a particular pet
+            //need information about a particular news
             News selectednews = db.News.SqlQuery("select * from news where newsid = @id", new SqlParameter("@id", id)).FirstOrDefault();
             List<Category> categories = db.Categories.SqlQuery("select * from categories").ToList();
 
             UpdateNews UpdateNewsViewModel = new UpdateNews();
             UpdateNewsViewModel.News = selectednews;
             UpdateNewsViewModel.category = categories;
+            //using viewmodel to get the list of all the categories in order to perform updation of the news.
 
             return View(UpdateNewsViewModel);
         }
@@ -161,7 +174,7 @@ namespace HospitalProjectTeam4.Controllers
                 }
             }
 
-            //Debug.WriteLine("I am trying to edit a pet's name to "+PetName+" and change the weight to "+PetWeight.ToString());
+            //Debug.WriteLine("I am trying to edit a news's name to "+NewsName+" and change the Publish to "+NewsPublish);
 
             string query = "update news set NewsName=@NewsName, CategoryID=@CategoryID, NewsDate=@NewsDate, NewsPublish=@NewsPublish, NewsDescription=@NewsDescription, HasPic=@haspic, PicExtension=@newspicextension where NewsID=@id";
             SqlParameter[] sqlparams = new SqlParameter[8];
@@ -176,7 +189,7 @@ namespace HospitalProjectTeam4.Controllers
 
             db.Database.ExecuteSqlCommand(query, sqlparams);
 
-            //logic for updating the pet in the database goes here
+            //logic for updating the news in the database goes here
             return RedirectToAction("List");
         }
 
