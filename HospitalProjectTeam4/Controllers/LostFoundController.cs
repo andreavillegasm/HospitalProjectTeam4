@@ -7,8 +7,6 @@ using System.Data.SqlClient;
 using System.Data.Entity;
 using HospitalProjectTeam4.Data;
 using HospitalProjectTeam4.Models;
-using Microsoft.AspNet.Identity;
-using System.Diagnostics;
 
 namespace HospitalProjectTeam4.Controllers
 {
@@ -30,8 +28,6 @@ namespace HospitalProjectTeam4.Controllers
         {
             LostFound lostandfound = new LostFound();
             DateTime now = DateTime.Now;
-            string userid = User.Identity.GetUserId();
-            //Debug.WriteLine(userid);
             lostandfound.LostorFound = lostorfound;
             lostandfound.LostFoundItem = item;
             lostandfound.LostFoundDate = now.ToString();
@@ -39,11 +35,10 @@ namespace HospitalProjectTeam4.Controllers
             lostandfound.LostFoundColor = color;
             lostandfound.LostFoundPerson = contactno;
             lostandfound.LostFoundNote = note;
-            lostandfound.PatientID = userid;
+            lostandfound.PatientID = 1.ToString();
             db.lostFounds.Add(lostandfound);
             db.SaveChanges();
             return RedirectToAction("List");
-            //return View();
         }
         public ActionResult List(string sel)
         {
