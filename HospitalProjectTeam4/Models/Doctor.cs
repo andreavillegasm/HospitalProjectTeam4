@@ -18,7 +18,7 @@ namespace HospitalProjectTeam4.Models
         public string DoctorFName { get; set; }
         public string DoctorMName { get; set; }
         public string DoctorLName { get; set; }
-        public string DoctorBirthDate { get; set; }
+        public DateTime DoctorBirthDate { get; set; }
         public string DoctorEmail { get; set; }
         public string DoctorPhone { get; set; }
         public string DoctorAltPhone { get; set; }
