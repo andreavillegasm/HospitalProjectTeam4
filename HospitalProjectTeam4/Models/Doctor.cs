@@ -25,5 +25,8 @@ namespace HospitalProjectTeam4.Models
 
         //Representing the "Many" in (Many Bookings to one Doctor)
         public ICollection<Booking> Booking { get; set; }
+
+        //Representing the "Many" in (Many Replies to one Doctor)
+        public ICollection<ForumReply> ForumReply { get; set; }
     }
 }
