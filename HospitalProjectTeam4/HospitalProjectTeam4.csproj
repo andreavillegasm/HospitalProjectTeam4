@@ -177,6 +177,7 @@
     <Compile Include="Controllers\LostFoundController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\PatientController.cs" />
     <Compile Include="Controllers\RecordController.cs" />
     <Compile Include="Data\HospitalProjectContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -185,6 +186,10 @@
     <Compile Include="Migrations\202004131435076_initial.cs" />
     <Compile Include="Migrations\202004131435076_initial.designer.cs">
       <DependentUpon>202004131435076_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004131825595_fixed-names.cs" />
+    <Compile Include="Migrations\202004131825595_fixed-names.designer.cs">
+      <DependentUpon>202004131825595_fixed-names.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -293,6 +298,7 @@
     <Content Include="Views\News\New.cshtml" />
     <Content Include="Views\News\Show.cshtml" />
     <Content Include="Views\News\Update.cshtml" />
+    <Content Include="Views\Patient\Add.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -314,6 +320,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202004131435076_initial.resx">
       <DependentUpon>202004131435076_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004131825595_fixed-names.resx">
+      <DependentUpon>202004131825595_fixed-names.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
