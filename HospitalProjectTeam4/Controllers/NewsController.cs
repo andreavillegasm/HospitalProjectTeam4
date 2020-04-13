@@ -57,7 +57,7 @@ namespace HospitalProjectTeam4.Controllers
         //THE [HttpPost] Means that this method will only be activated on a POST form submit to the following URL
         //URL: /News/Add
         [HttpPost]
-        public ActionResult Add(string NewsName, DateTime NewsDate, string NewsPublish, string NewsDescription, int CategoryID)
+        public ActionResult Add(string NewsName, DateTime NewsDate, string NewsPublish, string NewsDescription, int CategoryID, HttpPostedFileBase NewsPic, int HasPic)
         {
             //STEP 1: PULL DATA! The data is access as arguments to the method. Make sure the datatype is correct!
             //The variable name  MUST match the name attribute described in Views/Pet/Add.cshtml
@@ -66,14 +66,15 @@ namespace HospitalProjectTeam4.Controllers
             //Debug.WriteLine("Want to create a pet with name " + PetName + " and weight " + PetWeight.ToString()) ;
 
             //STEP 2: FORMAT QUERY! the query will look something like "insert into () values ()"...
-            string query = "insert into news (NewsName, NewsDate, NewsPublish, NewsDescription, CategoryID) values (@NewsName,@NewsDate,@NewsPublish,@NewsDescription,@CategoryID)";
-            SqlParameter[] sqlparams = new SqlParameter[5]; //0,1,2,3,4 pieces of information to add
+            string query = "insert into news (NewsName, NewsDate, NewsPublish, NewsDescription, CategoryID, HasPic) values (@NewsName,@NewsDate,@NewsPublish,@NewsDescription,@CategoryID, @HasPic)";
+            SqlParameter[] sqlparams = new SqlParameter[6]; //0,1,2,3,4 pieces of information to add
             //each piece of information is a key and value pair
             sqlparams[0] = new SqlParameter("@NewsName", NewsName);
             sqlparams[1] = new SqlParameter("@NewsDate", NewsDate);
             sqlparams[2] = new SqlParameter("@NewsPublish", NewsPublish);
             sqlparams[3] = new SqlParameter("@NewsDescription", NewsDescription);
             sqlparams[4] = new SqlParameter("@CategoryId", CategoryID);
+            sqlparams[5] = new SqlParameter("@HasPic", HasPic);
 
             //db.Database.ExecuteSqlCommand will run insert, update, delete statements
             //db.Pets.SqlCommand will run a select statement, for example.

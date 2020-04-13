@@ -7,7 +7,7 @@
 <div class="navbar">
     <a class="navlink" href="/News/List">Back to List</a>
 </div>
-<form method="POST" action="/News/Add">
+<form method="POST" action="/News/Add" enctype="multipart/form-data">
     <div class="inpfield"><span>Name:</span><input id="NewsName" type="text" name="NewsName" /></div>
     <div class="inpfield">
         <span>Category:</span>
@@ -30,6 +30,7 @@
         <textarea id="NewsDescription" name="NewsDescription">
         </textarea>
     </div>
+    <input type="hidden" name="HasPic" value="0" />
     <div class="inpfield">
         <input type="submit" value="Add News">
     </div>
