@@ -87,7 +87,7 @@ namespace HospitalProjectTeam4.Controllers
         //Method is only called when it comes from a form submission
         //Parameters are all the values from the form
         [HttpPost]
-        public ActionResult New(string recordName, string recordType, string recordContent, int bookingID, HttpPostedFileBase recordFile)
+        public ActionResult New(string recordName, string recordType, string recordContent, int bookingID, HttpPostedFileBase recordFile, int hasFile)
         {
             
 
@@ -95,15 +95,16 @@ namespace HospitalProjectTeam4.Controllers
             Debug.WriteLine("The values passed into the method are: " + recordName + ", " + recordType + ", " + recordContent + ", " + bookingID);
 
             //CREATE THE INSERT INTO QUERY
-            string query = "insert into Records (RecordName, RecordType, RecordContent, BookingID) values (@recordName, @recordType, @recordContent, @bookingID)";
+            string query = "insert into Records (RecordName, RecordType, RecordContent, BookingID, HasFile) values (@recordName, @recordType, @recordContent, @bookingID , @hasFile)";
 
             //Binding the variables to the parameters
-            SqlParameter[] sqlparams = new SqlParameter[4]; //0,1,2,3 pieces of information to add
+            SqlParameter[] sqlparams = new SqlParameter[5]; //0,1,2,3 pieces of information to add
             //each piece of information is a key and value pair
             sqlparams[0] = new SqlParameter("@recordName", recordName);
             sqlparams[1] = new SqlParameter("@recordType", recordType);
             sqlparams[2] = new SqlParameter("@recordContent", recordContent);
             sqlparams[3] = new SqlParameter("@bookingID", bookingID);
+            sqlparams[4] = new SqlParameter("@hasFile", hasFile);
 
             //RUN THE QUERY WITH THE PARAMETERS 
             db.Database.ExecuteSqlCommand(query, sqlparams);
