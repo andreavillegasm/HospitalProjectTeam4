@@ -288,6 +288,11 @@
     <Content Include="Views\Category\Show.cshtml" />
     <Content Include="Views\Category\Update.cshtml" />
     <Content Include="Views\Doctor\Add.cshtml" />
+    <Content Include="Views\News\DeleteConfirm.cshtml" />
+    <Content Include="Views\News\List.cshtml" />
+    <Content Include="Views\News\New.cshtml" />
+    <Content Include="Views\News\Show.cshtml" />
+    <Content Include="Views\News\Update.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
