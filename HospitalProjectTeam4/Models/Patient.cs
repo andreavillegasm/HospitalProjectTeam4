@@ -18,7 +18,7 @@ namespace HospitalProjectTeam4.Models
         public string PatientFName { get; set; }
         public string PatientMNmae { get; set; }
         public string PatientLNmae { get; set; }
-        public DateTime PatientBirthDate { get; set; }
+        public string PatientBirthDate { get; set; }
         public string PatientEmail { get; set; }
         public string PatientPhone { get; set; }
 
