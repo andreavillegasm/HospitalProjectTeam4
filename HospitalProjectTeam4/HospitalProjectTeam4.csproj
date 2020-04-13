@@ -178,6 +178,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\RecordController.cs" />
+    <Compile Include="Controllers\RegistrationController.cs" />
     <Compile Include="Data\HospitalProjectContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -304,6 +305,7 @@
     <Content Include="Views\News\New.cshtml" />
     <Content Include="Views\News\Show.cshtml" />
     <Content Include="Views\News\Update.cshtml" />
+    <Content Include="Views\Registration\Add.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
