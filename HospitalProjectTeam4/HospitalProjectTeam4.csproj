@@ -170,8 +170,8 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BookingAppointmentController.cs" />
-    <Compile Include="Controllers\DoctorController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\DoctorController.cs" />
     <Compile Include="Controllers\ForumPostController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LostFoundController.cs" />
@@ -182,45 +182,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202004022033135_database-setup.cs" />
-    <Compile Include="Migrations\202004022033135_database-setup.designer.cs">
-      <DependentUpon>202004022033135_database-setup.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004100445007_forumposts-replies.cs" />
-    <Compile Include="Migrations\202004100445007_forumposts-replies.designer.cs">
-      <DependentUpon>202004100445007_forumposts-replies.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004102001493_initials.cs" />
-    <Compile Include="Migrations\202004102001493_initials.designer.cs">
-      <DependentUpon>202004102001493_initials.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004102340482_zameer.cs" />
-    <Compile Include="Migrations\202004102340482_zameer.designer.cs">
-      <DependentUpon>202004102340482_zameer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004110424548_zameer1.cs" />
-    <Compile Include="Migrations\202004110424548_zameer1.designer.cs">
-      <DependentUpon>202004110424548_zameer1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004110641158_update-forumpostings-replies.cs" />
-    <Compile Include="Migrations\202004110641158_update-forumpostings-replies.designer.cs">
-      <DependentUpon>202004110641158_update-forumpostings-replies.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004112013201_zz.cs" />
-    <Compile Include="Migrations\202004112013201_zz.designer.cs">
-      <DependentUpon>202004112013201_zz.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004120304552_zz1.cs" />
-    <Compile Include="Migrations\202004120304552_zz1.designer.cs">
-      <DependentUpon>202004120304552_zz1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004120442400_dbcontext-fixed.cs" />
-    <Compile Include="Migrations\202004120442400_dbcontext-fixed.designer.cs">
-      <DependentUpon>202004120442400_dbcontext-fixed.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004121420497_news.cs" />
-    <Compile Include="Migrations\202004121420497_news.designer.cs">
-      <DependentUpon>202004121420497_news.cs</DependentUpon>
+    <Compile Include="Migrations\202004131435076_initial.cs" />
+    <Compile Include="Migrations\202004131435076_initial.designer.cs">
+      <DependentUpon>202004131435076_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -318,6 +282,12 @@
     <Content Include="Views\LostFound\List.cshtml" />
     <Content Include="Views\LostFound\Update.cshtml" />
     <Content Include="Views\News\Add.cshtml" />
+    <Content Include="Views\Category\Add.cshtml" />
+    <Content Include="Views\Category\DeleteConfirm.cshtml" />
+    <Content Include="Views\Category\List.cshtml" />
+    <Content Include="Views\Category\Show.cshtml" />
+    <Content Include="Views\Category\Update.cshtml" />
+    <Content Include="Views\Doctor\Add.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -337,35 +307,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202004022033135_database-setup.resx">
-      <DependentUpon>202004022033135_database-setup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004100445007_forumposts-replies.resx">
-      <DependentUpon>202004100445007_forumposts-replies.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004102001493_initials.resx">
-      <DependentUpon>202004102001493_initials.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004102340482_zameer.resx">
-      <DependentUpon>202004102340482_zameer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004110424548_zameer1.resx">
-      <DependentUpon>202004110424548_zameer1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004110641158_update-forumpostings-replies.resx">
-      <DependentUpon>202004110641158_update-forumpostings-replies.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004112013201_zz.resx">
-      <DependentUpon>202004112013201_zz.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004120304552_zz1.resx">
-      <DependentUpon>202004120304552_zz1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004120442400_dbcontext-fixed.resx">
-      <DependentUpon>202004120442400_dbcontext-fixed.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004121420497_news.resx">
-      <DependentUpon>202004121420497_news.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202004131435076_initial.resx">
+      <DependentUpon>202004131435076_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

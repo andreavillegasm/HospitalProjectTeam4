@@ -69,7 +69,7 @@ namespace HospitalProjectTeam4.Controllers
                 NewDoctor.DoctorLName = DoctorLName;
                 NewDoctor.DoctorBirthDate = DoctorDOB;
                 NewDoctor.DoctorPhone = DoctorPhone;
-                NewDoctor.DoctorAltPhone = DoctorAltPhone ;
+                NewDoctor.DoctorAltPhone = DoctorAltPhone;
 
                 //SQL equivalent : INSERT INTO GROOMERS (GroomerFname, .. ) VALUES (@GroomerFname..)
                 db.Doctors.Add(NewDoctor);
