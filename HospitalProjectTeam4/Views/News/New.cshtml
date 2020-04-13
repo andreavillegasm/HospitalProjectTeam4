@@ -1,0 +1,36 @@
+﻿@model  List<HospitalProjectTeam4.Models.Category>
+@{
+    ViewBag.Title = "Add";
+}
+
+<h2>Add a New News</h2>
+<div class="navbar">
+    <a class="navlink" href="/News/List">Back to List</a>
+</div>
+<form method="POST" action="/News/Add">
+    <div class="inpfield"><span>Name:</span><input id="NewsName" type="text" name="NewsName" /></div>
+    <div class="inpfield">
+        <span>Category:</span>
+        <select id="CategoryID" type="text" name="CategoryID">
+            @{
+                //A rendering loop for presenting a list of species
+                //The pet should be one of these species
+                foreach (var category in Model)
+                {
+                    <option value="@category.CategoryID">@category.Name</option>
+
+                }
+            }
+        </select>
+    </div>
+    <div class="inpfield"><span>Date:</span><input id="NewsDate" type="text" name="NewsDate" /></div>
+    <div class="inpfield"><span>Publish:</span><input id="NewsPublish" type="text" name="NewsPublish" /></div>
+    <div class="inpfield">
+        Description:
+        <textarea id="NewsDescription" name="NewsDescription">
+        </textarea>
+    </div>
+    <div class="inpfield">
+        <input type="submit" value="Add News">
+    </div>
+</form>

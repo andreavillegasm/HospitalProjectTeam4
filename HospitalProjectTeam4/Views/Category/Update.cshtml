@@ -1,0 +1,12 @@
+﻿@model HospitalProjectTeam4.Models.Category
+@{
+    ViewBag.Title = "Update";
+}
+
+<h2>Update @Model.Name</h2>
+<a href="/Category/List">Back to List</a>
+
+<form method="post" action="/Category/Update/@Model.CategoryID">
+    <input type="text" id="CategoryName" name="CategoryName" value="@Model.Name" />
+    <input type="submit" value="update category" />
+</form>

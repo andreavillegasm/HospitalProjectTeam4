@@ -28,7 +28,7 @@ namespace HospitalProjectTeam4.Models
         public string NewsName { get; set; }
         //weight is in kilograms (kg)
         public DateTime NewsDate { get; set; }
-        public Boolean NewsPublish { get; set; }
+        public string NewsPublish { get; set; }
         public string NewsDescription { get; set; }
 
         public int HasPic { get; set; }

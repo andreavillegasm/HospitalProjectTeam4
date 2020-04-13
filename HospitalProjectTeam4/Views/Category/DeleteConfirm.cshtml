@@ -1,0 +1,12 @@
+﻿@model HospitalProjectTeam4.Models.Category
+@{
+    ViewBag.Title = "DeleteConfirm";
+}
+
+<h2>Are you sure you want to delete @Model.Name?</h2>
+<div class="navbar">
+    <a href="/Category/Show/@Model.CategoryID">Cancel</a>
+</div>
+<form method="POST" action="/Category/Delete/@Model.CategoryID">
+    <div class="inpfield"><input type="submit" value="Confirm" /></div>
+</form>

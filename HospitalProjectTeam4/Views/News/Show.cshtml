@@ -1,0 +1,37 @@
+﻿@model  HospitalProjectTeam4.Models.News
+@{
+    ViewBag.Title = "Show";
+}
+
+<h2>Show News</h2>
+<div class="option">
+    <a class="navlink" href="/News/List">Back to List</a>
+    <a class="navlink" href="/News/Update/@Model.NewsID">Update</a>
+    <a class="navlink" href="/News/DeleteConfirm/@Model.NewsID">Delete</a>
+</div>
+<div>
+
+    <div class="col2">
+        <div id="profilecontainer">
+            @{
+                if (Model.HasPic == 1)
+                {
+                    <img src="../../Content/News/@(Model.NewsID).@(Model.PicExtension)" alt="Image of @Model.NewsName" />
+                }
+            }
+        </div>
+
+        <div>Name : @Model.NewsName</div>
+        <div>Date : @(Model.NewsDate)</div>
+        <div>Publish : @(Model.NewsPublish)</div>
+        <div>Category : @Model.Category.Name</div>
+        <div>
+            Description :
+            <div class="notewrite">
+                @Model.NewsDescription
+            </div>
+        </div>
+
+    </div>
+    
+</div>

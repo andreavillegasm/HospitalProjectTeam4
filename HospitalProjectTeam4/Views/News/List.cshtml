@@ -1,0 +1,35 @@
+﻿@model List<HospitalProjectTeam4.Models.News>
+
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List of News</h2>
+<div class="navbar">
+    <a class="navlink" href="/News/New">Add New</a>
+</div>
+<div class="tilecontainer">
+    @{
+        foreach (var News in Model)
+        {
+            <div class="listitem">
+                <div class="itemimage">
+                    @{
+                        if (News.HasPic == 1)
+                        {
+                            <img src="../../Content/News/@(News.NewsID).@(News.PicExtension)" alt="Image of @News.NewsName" />
+                        }
+                    }
+                </div>
+                <div class="itemdetails">
+                    <div class="listcat"><a href="/News/Show/@News.NewsID">@News.NewsName</a></div>
+                    <div class="listcat">Category : <span>@News.Category.Name</span></div>
+                    <div class="listcat">Date : <span>@(News.NewsDate)</span></div>
+                    <span class="cta"><a href="/News/Update/@News.NewsID">Update</a></span>
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+        }
+    }
+    <div style="clear:both;"></div>
+</div>

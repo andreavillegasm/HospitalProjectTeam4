@@ -1,0 +1,39 @@
+﻿@model HospitalProjectTeam4.Models.ViewModels.UpdateNews
+
+
+@{
+    ViewBag.Title = "Update";
+}
+
+<h2>Update</h2>
+<div class="navbar">
+    <a href="/Neews/List">Back to List</a>
+</div>
+<!-- Do not forget enctype="multiplart/form-data" if you want to do file upload! -->
+<form action="/News/Update/@Model.News.NewsID" method="POST" enctype="multipart/form-data">
+    <div class="inpfield"><span>Image: </span><input type="file" name="NewsPic" id="NewsPic" /></div>
+    <div class="inpfield"><span> Name: </span><input type="text" value="@Model.News.NewsName" id="NewsName" name="NewsName" /> </div>
+    <div class="inpfield"><span>News Date: </span><input type="text" value="@Model.News.NewsDate" id="NewsDate" name="NewsDate" /> </div>
+    <div class="inpfield"><span>News Publish: </span><input type="text" value="@Model.News.NewsPublish" id="NewsPublish" name="NewsPublish" /></div>
+    <div class="inpfield">
+        <span>News Category:</span>
+        <select id="NewsCategoryID" name="CategoryID">
+            @foreach (var categories in Model.category)
+            {
+                var selected = "";
+                if (Model.News.CategoryID == categories.CategoryID)
+                {
+                    selected = "selected";
+                }
+                <option value="@categories.CategoryID" @selected>@categories.Name</option>
+            }
+        </select>
+    </div>
+
+    <div class="inpfield">
+        <span>News Description</span>
+        <textarea id="NewsDescription" name="NewsDescription">@Model.News.NewsDescription</textarea>
+    </div>
+    <div class="inpfield"><input type="submit" value="update news" /></div>
+
+</form>

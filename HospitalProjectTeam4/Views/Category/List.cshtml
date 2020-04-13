@@ -1,0 +1,27 @@
+﻿@model List<HospitalProjectTeam4.Models.Category>
+
+
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+<div class="navbar">
+    <a href="/Category/Add">Add New</a>
+</div>
+<form method="GET" action="/Category/List">
+    <input type="text" id="categorysearchkey" name="categorysearchkey" />
+    <input type="submit" value="Search" />
+</form>
+<div class="tilecontainer">
+    @{
+        foreach (var category in @Model)
+        {
+
+            <div class="listitem">
+                <a href="/Category/Show/@category.CategoryID">@category.Name</a>
+                <a class="cta" href="/Category/Update/@category.CategoryID">Update</a>
+            </div>
+        }
+    }
+</div>

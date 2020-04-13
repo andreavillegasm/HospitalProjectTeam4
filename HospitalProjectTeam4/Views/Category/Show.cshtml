@@ -1,0 +1,14 @@
+﻿@model HospitalProjectTeam4.Models.Category
+@{
+    ViewBag.Title = "Show";
+}
+
+<h2>Show</h2>
+<div class="navbar">
+    <a class="navlink" href="/Category/List">Back to List</a>
+    <a class="navlink" href="/Category/Update/@Model.CategoryID">Update</a>
+    <a class="navlink" href="/Category/DeleteConfirm/@Model.CategoryID">Delete</a>
+</div>
+<div>
+    <span>Name : </span>@Model.Name
+</div>
