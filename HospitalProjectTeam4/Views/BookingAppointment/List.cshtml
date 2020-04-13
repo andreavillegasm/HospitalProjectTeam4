@@ -25,7 +25,7 @@
         foreach (var books in Model)
         {
             <tr>
-                <td><a href="Show/@books.BookingID">@books.Doctor.DoctorFName, @books.Doctor.DoctorLNmae</a></td>
+                <td><a href="Show/@books.BookingID">@books.Doctor.DoctorFName, @books.Doctor.DoctorLName</a></td>
                 <td><a>@books.BookingDate</a></td>
                 <td>@books.Patient.PatientFName, @books.Patient.PatientLNmae</td>
                 <td><a href="Update/@books.BookingID">Update</a></td>
