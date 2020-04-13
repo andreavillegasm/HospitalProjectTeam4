@@ -23,29 +23,35 @@ namespace HospitalProjectTeam4.Controllers
     public class RecordController : Controller
 
     {
+        private ApplicationSignInManager _signInManager;
+        private ApplicationUserManager _userManager;
+
         private HospitalProjectContext db = new HospitalProjectContext();
+
+        public RecordController() { }
+        
         // GET: Record
         public ActionResult Index()
         {
 
             return View();
         }
-        public ActionResult List()
+        public ActionResult List(int id)
         {
             
-            string query = "Select * from Records join Bookings on Records.BookingID = Bookings.BookingID order by BookingDate Desc";
+            string query = "Select * from Records where BookingID =@id";
 
             //Checks to see if the query is being sent
             Debug.WriteLine(query);
 
-            //Grabs all the records plus the associated information regarding that specific record
-            List<Record> allrecords = db.Records.SqlQuery(query).ToList();
+            var first_parameter = new SqlParameter("@id", id);
 
-            ListRecords viewmodel = new ListRecords();
-            viewmodel.records = allrecords;
+            //Grabs all the records
+            List<Record> allrecords = db.Records.SqlQuery(query,first_parameter).ToList();
+
           
-
-            return View(viewmodel);
+ 
+            return View(allrecords);
         }
 
         public ActionResult Show(int? id)

@@ -171,7 +171,6 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BookingAppointmentController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
-    <Compile Include="Controllers\DoctorController.cs" />
     <Compile Include="Controllers\ForumPostController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LostFoundController.cs" />
@@ -326,7 +325,6 @@
     <Content Include="Views\Category\List.cshtml" />
     <Content Include="Views\Category\Show.cshtml" />
     <Content Include="Views\Category\Update.cshtml" />
-    <Content Include="Views\Doctor\Add.cshtml" />
     <Content Include="Views\News\DeleteConfirm.cshtml" />
     <Content Include="Views\News\List.cshtml" />
     <Content Include="Views\News\New.cshtml" />

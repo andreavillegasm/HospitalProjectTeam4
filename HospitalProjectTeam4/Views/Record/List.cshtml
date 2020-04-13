@@ -1,27 +1,29 @@
-﻿@model HospitalProjectTeam4.Models.ViewModels.ListRecords
+﻿@model List<HospitalProjectTeam4.Models.Record>
 @{
     ViewBag.Title = "List";
 }
-    <div class="container">
-        <h2 class="title">List</h2>
-        <a class="btn btn-success" href="/Record/Add">Add a Record</a>
+<div class="container">
+    <a href="/BookingAppointment/List">Back to Bookings</a>
+    <h2 class="title">List of Records</h2>
+    <a class="btn btn-success" href="/Record/Add/@Model.BookingID">Add a Record</a>
 
-        <div class="list-group">
+    <div class="list-group">
 
-            @{
-                foreach (var record in @Model.records)
-                {
-                    <a href="Show/@record.RecordID" class="list-group-item list-group-item-action">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h3 class="mb-1">@record.RecordName</h3>
-                        </div>
-                        <p class="mb-1">@record.RecordContent</p>
-                    </a>
-
-                }
-
+        @{
+            foreach (var record in Model)
+            {
+                <a href="Show/@record.RecordID" class="list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h3 class="mb-1">@record.RecordName</h3>
+                        <small>@record.Booking.BookingDate</small>
+                    </div>
+                    <p class="mb-1">@record.RecordContent</p>
+                </a>
 
             }
-        </div>
 
+
+        }
     </div>
+
+</div>
