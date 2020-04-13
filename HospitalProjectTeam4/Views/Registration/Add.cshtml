@@ -1,0 +1,103 @@
+﻿
+@{
+    ViewBag.Title = "Add";
+}
+
+<h2>Register</h2>
+<hr />
+<form action="Add" method="post">
+    <h4>Create an account</h4>
+    <div class="container-fluid">
+        <div class="form-group">
+            <div class="col-md-2">
+                <label>Who are you?</label>
+            </div>
+            <div class="col-md-10">
+                <select name="user" class="form-control">
+                    <option value="Doctor">Doctor</option>
+                    <option value="Patient">Patient</option>
+                    <option value="Hospitalstaff">Hospital staff</option>
+                </select>
+
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-2">
+                <label>Email address</label>
+            </div>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="emailaddress" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-2">
+                <label>Password</label>
+            </div>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="password" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-2">
+                <label>Confirm Password</label>
+            </div>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="confirmpassword" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-2">
+                <label>First Name</label>
+            </div>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="firstname" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-2">
+                <label>Middle Name</label>
+            </div>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="middlename" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-2">
+                <label>Last Name</label>
+            </div>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="lastname" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-2">
+                <label>Date of Birth</label>
+            </div>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="dob" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-2">
+                <label>Phone number</label>
+            </div>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="phonenumber" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-2">
+                <label>Alternate Phone Number</label>
+            </div>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="altphonenumber" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-2">
+                <input type="submit" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+</form>
+
