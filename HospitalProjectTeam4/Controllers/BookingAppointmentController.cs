@@ -10,6 +10,7 @@ using HospitalProjectTeam4.Data;
 using HospitalProjectTeam4.Models;
 using HospitalProjectTeam4.Models.ViewModels;
 using System.Globalization;
+using Microsoft.AspNet.Identity;
 
 namespace HospitalProjectTeam4.Controllers
 {
@@ -59,7 +60,15 @@ namespace HospitalProjectTeam4.Controllers
             Bookings = db.Bookings.ToList();
             return View(Bookings);
         }
-        
+        public ActionResult ListMyBooking()
+        {
+            string id = User.Identity.GetUserId();
+            List<Booking> Bookings;
+            Bookings = db.Bookings.Where(bb=>bb.PatientID.Contains(id) ||
+            bb.DoctorID.Contains(id)).ToList();
+            return View(Bookings);
+        }
+
         public ActionResult Show(int id)
         {
 

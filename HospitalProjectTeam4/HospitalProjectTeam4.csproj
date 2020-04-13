@@ -310,6 +310,7 @@
     <Content Include="Views\News\Show.cshtml" />
     <Content Include="Views\News\Update.cshtml" />
     <Content Include="Views\Registration\Add.cshtml" />
+    <Content Include="Views\BookingAppointment\ListMyBooking.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Records\" />
