@@ -23,7 +23,7 @@ Team Member Features and Contributions:
 
 ## Andrea Villegas: (Team Leader) 
 * Records 
-  - Description: The Records feature helps both Doctors and Patients to keep notes, prescriptions and referrals from appointments for future reference. This feature is accessed through the show page of an appointment as one viewed the details of an appointment a doctor can add a record and the patient can view it if they review their appointments.
+  - Description: The Records feature helps both Doctors and Patients to keep notes, prescriptions and referral Records from appointments for future reference. This feature is accessed through the show page of an appointment as one viewed the details of an appointment a doctor can add a record and the patient can view it if they review their appointments.
   - User Story: Doctor Florentino just had an appointment with the Patient Mariana. He has taken some notes as well as prescribed some medicine. Doctor Florentino goes into St.Joseph's General Hospital Page and goes to his appointments. There he can see the appointment with Mariana. Doctor Florentino views the appointment and chooses add record. He inputs the overview  of the record and selects type prescription. After he goes into edit and adds the attachement of the Prescription so it can be printed by Mariana if she wishes. 
   If he wishes, he can add more attachments to the same appointment, delete attachments or edit them.
   Once the Patient Mariana Logins she can see under her appointment with Doctor Florentino the prescription  and any other documents Doctor Florentino attached to the appointment, which now she can view and print.
