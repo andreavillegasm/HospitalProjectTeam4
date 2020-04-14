@@ -36,12 +36,16 @@ namespace HospitalProjectTeam4.Controllers
         [HttpPost]
         public async Task<ActionResult> Add(string user, string emailaddress, string password, string confirmpassword, string firstname, string middlename, string lastname, string dob, string phonenumber, string altphonenumber)
         {
+            //Stores data in master user table
             ApplicationUser NewUser = new ApplicationUser();
             NewUser.UserName = emailaddress;
             NewUser.Email = emailaddress;
+            //Pass data to table
             IdentityResult result = await UserManager.CreateAsync(NewUser, password);
+            //If it succeed
             if (result.Succeeded)
             {
+                //If registered user is patient
                 if (user == "Patient")
                 {
                     Patient newpatient = new Patient();
@@ -57,6 +61,7 @@ namespace HospitalProjectTeam4.Controllers
                     db.Patients.Add(newpatient);
                     db.SaveChanges();
                 }
+                //registered user is doctor
                 else if(user == "Doctor")
                 {
                     Doctor newdoctor = new Doctor();
@@ -73,6 +78,7 @@ namespace HospitalProjectTeam4.Controllers
                     db.SaveChanges();
 
                 }
+                //If registered user is hspital staff
                 else if(user == "Hospitalstaff")
                 {
                     HospitalStaff newstaff = new HospitalStaff();

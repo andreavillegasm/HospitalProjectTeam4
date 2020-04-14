@@ -7,6 +7,7 @@ namespace HospitalProjectTeam4.Models.ViewModels
 {
     public class AddBooking
     {
+        //List of doctors
         public virtual List<Doctor> Doctors { get; set; }
         //provide a list of patients
 
