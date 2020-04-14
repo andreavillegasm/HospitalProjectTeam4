@@ -1,11 +1,11 @@
 ﻿@model HospitalProjectTeam4.Models.Record
 @{
-    ViewBag.Title = "Update";
+    ViewBag.Title = "UpdateRecord";
 }
 
 <div class="container">
     <h2>Update Record</h2>
-    <form method="post" action="/Record/Update/@Model.RecordID" enctype="multipart/form-data">
+    <form method="post" action="/BookingAppointment/UpdateRec/@Model.RecordID" enctype="multipart/form-data">
         <div class="form-group">
             <label for="recordName">Record Name:</label>
             <input type="text" class="form-control" id="recordName" name="RecordName" value="@Model.RecordName">
@@ -20,7 +20,7 @@
             </select>
         </div>
         <div class="form-group">
-            <label class="form-check-label" for="recordContent">Content</label>
+            <label class="form-check-label" for="recordContent">Description</label>
             <input type="text" class="form-control" id="recordContent" name="recordContent" value="@Model.RecordContent">
         </div>
 
@@ -28,7 +28,7 @@
         <input type="hidden" class="form-control" id="bookingID" name="bookingID" value="@Model.BookingID">
 
         <div class="form-group">
-            <label class="form-check-label" for="recordFile">Attach a file</label>
+            <label class="form-check-label" for="recordFile">Attach a file (PDF only)</label>
             <input type="file" name="recordFile" id="recordFile" />
         </div>
 
@@ -36,8 +36,6 @@
             @{
                 if (Model.HasFile == 1)
                 {
-                    <iframe src="../../Content/Records/@(Model.RecordID).@(Model.FileExtension)" width="100%" height="1000px"></iframe>
-                    <input class="hidden" id="fileExtension" type="text" value="@Model.FileExtension" name="fileExtension" />
                     <fieldset>
                         <div>
                             <span>Delete the attachment?</span>
@@ -47,6 +45,9 @@
                         <span>No</span>
                         <input type="radio" value="no" id="FileDeleteN" name="fileDelete" checked />
                     </fieldset>
+                    <iframe src="../../Content/Records/@(Model.RecordID).@(Model.FileExtension)" width="100%" height="1000px"></iframe>
+                    <input class="hidden" id="fileExtension" type="text" value="@Model.FileExtension" name="fileExtension" />
+
                 }
             }
         </div>

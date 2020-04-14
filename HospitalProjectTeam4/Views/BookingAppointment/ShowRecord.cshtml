@@ -1,0 +1,41 @@
+﻿@model HospitalProjectTeam4.Models.ViewModels.ListRecords
+@{
+    ViewBag.Title = "ShowRecord";
+}
+    <div class="container" id="show-record">
+        <a style="padding:2em;" href="/BookingAppointment/Show/@Model.recordinfo.BookingID">Back to Appointment Information</a>
+        <h2 class="title">Record Details</h2>
+        <div style="background-color:white; border: lightgray solid 2px; padding:3em; border-radius: 15px">
+            <h4>@Model.recordinfo.RecordName</h4>
+            <small>@Model.bookinginfo.BookingDate</small>
+            <div>@Model.recordinfo.RecordType</div>
+            <div>@Model.recordinfo.RecordContent</div>
+            <div class="edit-buttons">
+                <a class="btn btn-warning" href="/BookingAppointment/UpdateRecord/@Model.recordinfo.RecordID">Edit </a>
+                <a class="btn btn-danger" href="/BookingAppointment/DeleteRecord/@Model.recordinfo.RecordID"> Delete</a>
+            </div>
+        </div>
+        
+        
+
+        <!--Check if Record has an attachment -->
+        <div class="file-attach">
+            @{
+                if (@Model.recordinfo.HasFile == 1)
+                {
+                    <iframe src="../../Content/Records/@(Model.recordinfo.RecordID).@(Model.recordinfo.FileExtension)" width="100%" height="1000px">
+                    </iframe>
+                }
+                else
+                {
+                    <div> Want to attach a file? Press edit and attach a file to the record</div>
+
+                }
+            }
+
+
+        </div>
+
+
+    </div>
+
