@@ -23,20 +23,26 @@ Team Member Features and Contributions:
 
 ## Andrea Villegas: (Team Leader) 
 * Records 
-  - Description: 
+  - Description: The Records feature helps both doctors and patients to keep notes, prescriptions, and referral records from appointments for future reference. This feature is accessed through the show page of an appointment as when viewing the details of an appointment, a doctor can add a record and the patient can view it if they wish to review an appointment's details.
+  - User Story: Doctor Florentino just had an appointment with the Patient Mariana. He has taken some notes as well as prescribed some medicine. Doctor Florentino goes into St.Joseph's General Hospital Page and goes to his appointments. There he can see the appointment with Mariana. Doctor Florentino views the appointment and chooses add record. He inputs the overview  of the record and selects type prescription. After he goes into edit and adds the attachement of the Prescription so it can be printed by Mariana if she wishes. 
+  If he wishes, he can add more attachments to the same appointment, delete attachments or edit them.
+  Once the Patient Mariana Logins she can see under her appointment with Doctor Florentino the prescription  and any other documents Doctor Florentino attached to the appointment, which now she can view and print.
   - Files
-    * Models:
-    * Views:
-    * Controller:
+    * Models: Record.cs
+    * Views: (Found under BookingAppointment): ShowRecord.cshtml, UpdateRecord.cshtml, DeleteRecord.cshtml, Show.cshtml (Insert Record        Part)
+    * Controller: BookingAppointmentController.cs (All Record related methods)
  
 * PatientForum 
-  - Description:
+  - Description: The Patient Forum is a feature where patients can post their questions and concerns, and get replies and help from the doctors. For this specific feature, patients are the only ones allowed to post in the Forum and they need to be logged in to do so, while doctors are the only ones allowed to type responses. However, in the future, I hope to develop this feature so that the creator of the post is allowed to reply to the doctor's reply, as well as to grant permission for hospital staff to also comment on posts.
+  - User Story: Mariana is a patient at St.Joseph's General Hospital and she has a concern regarding an over the counter medicine that was recomended to her. Thus, she logins into her account and writes a post on the Patient's forum under the category medicine. She has the ability to edit and delete the post whenever she wants.
+  Doctor Alicia logs into he account and browses through the Patient's Forum Posts. She sees Mariana's Posts and comments what she thinks is a good solution. She can comment in as many posts and as many times as she would like, as well can edit and delete her comments. 
+  When Mariana logins into her account again, she sees the reply from Doctor Alicia and deems it correct, so she marks the question as solved, so other people can see the question and learn from it.
   - Files:
-    * Models:
-    * Views:
-    * Controller
+    * Models: FormPost.cs , ForumReply.cs
+    * Views: ForumPost - List.cshtml , Add.cshtml , Update.cshtml , Show.cshtml , DeleteConfirm.cshtml , EditComment.cshtml  , AccessDenied.cshtml , AccessDeniedComment.cshtml
+    * Controller: ForumPostController.cs
     
-* Contribution: Assisted and Resolved Git and Migration Conflicts during the whole process.
+* Contribution: Created GitHub Repo, Setup project DbContext File, Setup project IdentityModel File, Created AuthenticationFile, Answered questions and troubleshoot problems with team members code, Assisted and Resolved Git and Migration Conflicts during the whole process, Added nav bar links to the HomePage.
     
 ## Manpreet Kaur
 * News Section
