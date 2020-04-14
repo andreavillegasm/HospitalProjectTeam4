@@ -7,7 +7,7 @@
 </div>
 <h2>Add Lost and found item</h2>
 <hr />
-<form action="Add" method="post">
+<form action="Add" method="POST" enctype="multipart/form-data">
     <div class="container-fluid">
         <div>
             <p>I am reporting that I:</p>
@@ -17,6 +17,12 @@
                 <option value="Found">Found</option>
                 <option value="Stolen">Stolen</option>
             </select>
+        </div>
+        <div>
+            <p>Image: </p>
+        </div>
+        <div>
+            <input type="file" class="form-control" name="itempic" id="itempic" />
         </div>
         <div>
             <p>Item:</p>
