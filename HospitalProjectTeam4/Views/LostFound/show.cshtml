@@ -1,0 +1,32 @@
+﻿@model HospitalProjectTeam4.Models.LostFound
+@{
+    ViewBag.Title = "show";
+}
+
+<h2>Show details</h2>
+<div>
+    <div>
+        <img style="width:250px; height:250px;" src="~/Content/LostFoundImages/@Model.picextension" />
+    </div>
+    <div>
+        @Model.LostFoundItem
+    </div>
+    <div>
+        @Model.LostFoundCategory
+    </div>
+    <div>
+        @Model.LostFoundColor
+    </div>
+    <div>
+        @Model.LostFoundDate
+    </div>
+    <div>
+        @Model.LostFoundPerson
+    </div>
+    <div>
+        @Model.LostFoundNote
+    </div>
+    <div>
+        <a href="../List">Back to list</a>
+    </div>
+</div>

@@ -61,7 +61,7 @@ namespace HospitalProjectTeam4.Controllers
                             itempic.SaveAs(path);
                             //if these are all successful then we can set these fields
                             haspic = 1;
-                            picextension = extension;
+                            picextension = fn;
 
                         }
                         catch (Exception ex)
@@ -86,6 +86,7 @@ namespace HospitalProjectTeam4.Controllers
             lostandfound.LostFoundColor = color;
             lostandfound.LostFoundPerson = contactno;
             lostandfound.LostFoundNote = note;
+            lostandfound.picextension = picextension;
             lostandfound.PatientID = id;
             db.lostFounds.Add(lostandfound);
             db.SaveChanges();
@@ -124,6 +125,11 @@ namespace HospitalProjectTeam4.Controllers
 
             db.SaveChanges();
             return RedirectToAction("List");
+        }
+        public ActionResult show(int id)
+        {
+            LostFound item = db.lostFounds.FirstOrDefault(b => b.LostFoundID == id);
+            return View(item);
         }
         public ActionResult Delete(int id)
         {

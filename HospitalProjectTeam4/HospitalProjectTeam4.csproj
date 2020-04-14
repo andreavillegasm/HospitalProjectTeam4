@@ -422,6 +422,7 @@
     <Content Include="Views\OnlineCheckIn\List.cshtml" />
     <Content Include="Views\OnlineCheckIn\Show.cshtml" />
     <Content Include="Views\OnlineCheckIn\Update.cshtml" />
+    <Content Include="Views\LostFound\show.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\LostFoundImages\" />

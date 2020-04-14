@@ -31,7 +31,7 @@
     @foreach (var items in Model)
     {
         <tr>
-            <td>@items.LostorFound</td>
+            <td><a href="show/@items.LostFoundID">@items.LostorFound</a></td>
             <td>@items.LostFoundItem</td>
             <td>@items.LostFoundDate</td>
             <td>@items.LostFoundCategory</td>
