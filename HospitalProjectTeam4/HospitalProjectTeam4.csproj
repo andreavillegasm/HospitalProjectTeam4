@@ -198,11 +198,16 @@
     <Compile Include="Migrations\202004132137344_reference-doctor-to-replies.designer.cs">
       <DependentUpon>202004132137344_reference-doctor-to-replies.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004140128506_donation.cs" />
+    <Compile Include="Migrations\202004140128506_donation.designer.cs">
+      <DependentUpon>202004140128506_donation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Booking.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Doctor.cs" />
+    <Compile Include="Models\Donation.cs" />
     <Compile Include="Models\ForumPost.cs" />
     <Compile Include="Models\ForumReply.cs" />
     <Compile Include="Models\HospitalStaff.cs" />
@@ -356,11 +361,17 @@
     <EmbeddedResource Include="Migrations\202004131435076_initial.resx">
       <DependentUpon>202004131435076_initial.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004131825595_fixed-names.resx">
+      <DependentUpon>202004131825595_fixed-names.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004132003368_zam.resx">
       <DependentUpon>202004132003368_zam.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004132137344_reference-doctor-to-replies.resx">
       <DependentUpon>202004132137344_reference-doctor-to-replies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004140128506_donation.resx">
+      <DependentUpon>202004140128506_donation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
