@@ -68,20 +68,33 @@ For news, i also implemented the category CRUD. There is one category to many ne
     
 Zameer Chariwala
 * Booking Appointment
-  - Description: 
+  - Description: This feature is to book an appointment with any doctor in st.Joseph hospital. Where user will login and he can only see his/her appointment with doctor. They can update appointments and delete an appointments if they dont require anymore.
+  
+  -User story: John is a patient and he wants to see a doctor he wants to book an appointment with Dr.Jack so, he can open st.joseph hospital website and he can book an appointment with Dr.Jack. Another day he wants to see another in that hospital he can book an many appointments he wants with many doctors. When jack login into website he can only see his appointments and he can only edit and delete his appointments. Same way when Dr.Jack logins he can only see appointments made with him and he can update and delete the appointment.
   - Files
-    * Models:
-    * Views:
-    * Controller:
+    * Models: (ViewModel)AddBooking.cs, (ViewModel)UpdateBooking.cs, Booking.cs.
+    * Views: Add.cshtml, List.cshtml, show.cshtml, Update.cshtml, ListMyBooking.cshtml.
+    * Controller: BookingAppointmentController.cs. 
  
 * Lost and Found
-  - Description:
-  - Files:
-    * Models:
-    * Views:
-    * Controller
+  - Description: This feature is useful to any patient in hospital, if any patient found any lost item in hospital he can post it on website and people can search for their lost item can they contact to the person and collect the item. User can also search only lost,found or stolen items in it.
+  
+  -User story: William is a patient in hospital he found a mobile phone in corridor he doesn't know who is the owner he posted a report on st.joseph website with all phone details with image. Same time Lusy lost her mobile phone and she searched for found item on st.joseph website and she found her mobile phone she called on given number and colleted her item.
+  - Files: 
+    * Models: LostFound.cs.
+    * Views: Add.cshtml, List.cshtml, Update.cshtml
+    * Controller: LostFoundController.cs.
     
-* Contribution:
+ * Registration: 
+  - Description: This feature will enable any user to register themselves into the website and login into the website. Where user will input all required information like who is he and all other information and he/she can register themselves.
+  
+  -User: Dr Jack got a job in st.joseph hospital and now he need an account in website so that he can see his appointment and all stuff. Dr jack goes to the website and Fill out all required information and register himself. Same thing with patient John and Hospital staff nurse nancy.
+  - Files:
+    * Models: Doctor.cs, HospitalStaff.cs, Patient.cs.
+    * Views: Add.cshtml.
+    * Controller: RegistrationController.cs.
+ 
+* Contribution: Helping out with errors.
     
 Rosario Hernandez
 * Online Check-In
