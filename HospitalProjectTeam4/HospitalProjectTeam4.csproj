@@ -177,7 +177,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BookingAppointmentController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
-    <Compile Include="Controllers\DoctorController.cs" />
+    <Compile Include="Controllers\DonationController.cs" />
     <Compile Include="Controllers\ForumPostController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LostFoundController.cs" />
@@ -193,15 +193,28 @@
     <Compile Include="Migrations\202004131435076_initial.designer.cs">
       <DependentUpon>202004131435076_initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004131825595_fixed-names.cs" />
+    <Compile Include="Migrations\202004131825595_fixed-names.designer.cs">
+      <DependentUpon>202004131825595_fixed-names.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\202004132003368_zam.cs" />
     <Compile Include="Migrations\202004132003368_zam.designer.cs">
       <DependentUpon>202004132003368_zam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004132137344_reference-doctor-to-replies.cs" />
+    <Compile Include="Migrations\202004132137344_reference-doctor-to-replies.designer.cs">
+      <DependentUpon>202004132137344_reference-doctor-to-replies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004140128506_donation.cs" />
+    <Compile Include="Migrations\202004140128506_donation.designer.cs">
+      <DependentUpon>202004140128506_donation.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Booking.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Doctor.cs" />
+    <Compile Include="Models\Donation.cs" />
     <Compile Include="Models\ForumPost.cs" />
     <Compile Include="Models\ForumReply.cs" />
     <Compile Include="Models\HospitalStaff.cs" />
@@ -245,6 +258,21 @@
     <Content Include="obj\Debug\HospitalProjectTeam4.csproj.CoreCompileInputs.cache" />
     <Content Include="obj\Debug\HospitalProjectTeam4.csproj.GenerateResource.cache" />
     <Content Include="obj\Debug\HospitalProjectTeam4.csprojAssemblyReference.cache" />
+    <Content Include="Wireframes\WireframesHospitalProjectManpreetKaurN01355663\IMG-6442.JPG" />
+    <Content Include="Wireframes\WireframesHospitalProjectManpreetKaurN01355663\IMG-6443.JPG" />
+    <Content Include="Wireframes\WireframesHospitalProjectManpreetKaurN01355663\IMG-6444.JPG" />
+    <Content Include="Wireframes\WireframesHospitalProjectManpreetKaurN01355663\IMG-6445.JPG" />
+    <Content Include="Wireframes\WireframesHospitalProjectManpreetKaurN01355663\IMG-6446.JPG" />
+    <Content Include="Wireframes\WireframesHospitalProjectManpreetKaurN01355663\IMG-6447.JPG" />
+    <Content Include="Wireframes\WireframesHospitalProjectManpreetKaurN01355663\IMG-6448.JPG" />
+    <Content Include="Wireframes\WireframesHospitalProjectManpreetKaurN01355663\IMG-6449.JPG" />
+    <Content Include="Wireframes\WireframesHospitalProjectManpreetKaurN01355663\IMG-6450.JPG" />
+    <Content Include="Wireframes\WireframesHospitalProjectManpreetKaurN01355663\IMG-6451.JPG" />
+    <Content Include="Wireframes\WireframesHospitalProjectManpreetKaurN01355663\IMG-6452.JPG" />
+    <Content Include="Wireframes\WireframesHospitalProjectManpreetKaurN01355663\IMG-6453.JPG" />
+    <Content Include="Wireframes\WireframesHospitalProjectManpreetKaurN01355663\IMG-6454.JPG" />
+    <Content Include="Wireframes\WireframesHospitalProjectManpreetKaurN01355663\IMG-6455.JPG" />
+    <Content Include="Wireframes\WireframesHospitalProjectManpreetKaurN01355663\IMG-6456.JPG" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -312,7 +340,6 @@
     <Content Include="Views\Category\List.cshtml" />
     <Content Include="Views\Category\Show.cshtml" />
     <Content Include="Views\Category\Update.cshtml" />
-    <Content Include="Views\Doctor\Add.cshtml" />
     <Content Include="Views\News\DeleteConfirm.cshtml" />
     <Content Include="Views\News\List.cshtml" />
     <Content Include="Views\News\New.cshtml" />
@@ -320,12 +347,12 @@
     <Content Include="Views\News\Update.cshtml" />
     <Content Include="Views\Registration\Add.cshtml" />
     <Content Include="Views\BookingAppointment\ListMyBooking.cshtml" />
+    <Content Include="Views\Donation\Add.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\LostFoundImages\" />
     <Folder Include="Content\Records\" />
     <Folder Include="obj\Debug\TempPE\" />
-    <Folder Include="Wireframes\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -344,10 +371,18 @@
     <EmbeddedResource Include="Migrations\202004131435076_initial.resx">
       <DependentUpon>202004131435076_initial.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004131825595_fixed-names.resx">
+      <DependentUpon>202004131825595_fixed-names.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004132003368_zam.resx">
       <DependentUpon>202004132003368_zam.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="obj\Debug\HospitalProjectTeam4.Migrations.initial.resources" />
+    <EmbeddedResource Include="Migrations\202004132137344_reference-doctor-to-replies.resx">
+      <DependentUpon>202004132137344_reference-doctor-to-replies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004140128506_donation.resx">
+      <DependentUpon>202004140128506_donation.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
