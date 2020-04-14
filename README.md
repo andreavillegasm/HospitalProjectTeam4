@@ -40,20 +40,31 @@ Andrea Villegas: (Team Leader)
     
 Manpreet Kaur
 * News Section
-  - Description: 
+  - Description: The news section feature is for users to read about the hospital.The users can only read the news in both list view and also in the single view read news by clicking on the newsname on the list page of news. They can't update and delete news from the hospital website.
+  while, the admins can create, read, update and delete the news whenever they want.
+-User story: Simmi can read the news from the hospital newssection in both list view and also in individual view. While, Jimmy is the admin of the hospital website. He can create a new news, update any old news and delete any news. Moreover, he can also read news in both list and single read view like Simmi.
+For news, i also implemented the category CRUD. There is one category to many news relationship.But, only admin can use this full category CRUD for creating, reading, updtaing and deleting a category for news section. The users can't access this category CURD.
   - Files
-    * Models:
-    * Views:
-    * Controller:
+   * Models: News.cs, Category.cs
+   * Views: 
+   News- New.cshtml, List.cshtml, Show.cshtml, Update.cshtml, DeleteConfirm.cshtml
+   Category- Add.cshtml, List.cshtml, Show.cshtml, Update.cshtml, DeleteConfirm.cshtml
+   * Controller- NewsController.cs, CategoryController.cs
  
 * Donations
-  - Description:
+  - Description: The admin can create, read, update and delete news.
+  The user can make a donation(non-registered and registered both)
+  But, the registered can also read his/her donation details in the future by going to his/her account.
+  All of the doctors, patients, users(non-registered) can only make donations (create) to the hospital site.
+  User story-  Simmi a registered user can make donation to the hospital website. She, can see her donation details in her account as she is registered. But, Geeta non-registered will not be able to see her donation in future but she can only make a donation to the hospital site.
+  Kim admin can create, read, update and delete any donation if she wants.
   - Files:
-    * Models:
-    * Views:
-    * Controller
-    
-* Contribution:
+    * Models: Donation.cs
+    * Views: Donation
+   Add.cshtml
+    * Controller: DonationController.cs
+    I  tried to do this feature but the identity user conceptwas confusing for me. So, i was unable to finish this feature.
+* Contribution:I created mine pages checked every content when others made commits and i tested database and helped Andrea by testing the commits.
     
 Zameer Chariwala
 * Booking Appointment

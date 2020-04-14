@@ -1,4 +1,6 @@
-﻿@model List<HospitalProjectTeam4.Models.LostFound>
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<HospitalProjectTeam4.Models.LostFound>
 @{
     ViewBag.Title = "List";
 }
@@ -26,9 +28,9 @@
         <th>Reporter</th>
         <th colspan="2" style="text-align:center">Action</th>
     </tr>
-    @foreach(var items in Model)
+    @foreach (var items in Model)
     {
-       <tr>
+        <tr>
             <td>@items.LostorFound</td>
             <td>@items.LostFoundItem</td>
             <td>@items.LostFoundDate</td>
@@ -42,5 +44,7 @@
 
         </tr>
     }
+
 </table>
+@Html.PagedListPager(Model, page => Url.Action("List", new { page }))
 
