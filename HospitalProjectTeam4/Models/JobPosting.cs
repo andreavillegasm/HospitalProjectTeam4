@@ -27,13 +27,13 @@ namespace HospitalProjectTeam4.Models
 
         //Representing the "One" in (One Job Type in one Job Posting)
         public int JobTypeID { get; set; }
-        [ForeignKey("JobTypeId")]
+        [ForeignKey("JobTypeID")]
 
         public virtual JobType JobType { get; set; }
 
         //Representing the "One" in (One Job Department in one Job Posting)
         public int JobDeptID { get; set; }
-        [ForeignKey("JobDeptId")]
+        [ForeignKey("JobDeptID")]
 
         public virtual JobDepartment JobDepartment { get; set; }
 

@@ -176,4 +176,5 @@ namespace HospitalProjectTeam4.Controllers
             return RedirectToAction("List");
         }
     }
+    
 }

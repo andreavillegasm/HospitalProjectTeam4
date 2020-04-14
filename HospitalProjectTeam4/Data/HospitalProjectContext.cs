@@ -81,5 +81,13 @@ namespace HospitalProjectTeam4.Data
 
         public System.Data.Entity.DbSet<HospitalProjectTeam4.Models.News> News { get; set; }
         public System.Data.Entity.DbSet<HospitalProjectTeam4.Models.Category> Categories { get; set; }
+
+        public System.Data.Entity.DbSet<HospitalProjectTeam4.Models.OnlineCheckIn> OnlineCheckIns { get; set; }
+        public System.Data.Entity.DbSet<HospitalProjectTeam4.Models.JobPosting> JobPostings { get; set; }
+        public System.Data.Entity.DbSet<HospitalProjectTeam4.Models.CareersForm> CareersForms { get; set; }
+        public System.Data.Entity.DbSet<HospitalProjectTeam4.Models.JobDepartment> JobDepartments { get; set; }
+        public System.Data.Entity.DbSet<HospitalProjectTeam4.Models.JobType> JobTypes { get; set; }
+
+
     }
 }

@@ -10,6 +10,7 @@
         <div class="posting-view">
             <h2 class="title">@Model.forumPost.PostingTitle</h2>
             <small>@Model.forumPost.PostingDate</small>
+            <p>By: @Model.forumPost.Patient.PatientFName @Model.forumPost.Patient.PatientLNmae</p>
             <div>@Model.forumPost.PostingCategory</div>
             <div>@Model.forumPost.PostingContent</div>
 
@@ -27,6 +28,7 @@
                         <div class="list-group-item list-group-item-action">
                             <div class="d-flex w-100 justify-content-between">
                                 <p class="mb-1">@reply.ReplyContent</p>
+                                <small>By: @reply.Doctor.DoctorFName @reply.Doctor.DoctorLName</small>
                                 <small class="mb-1">@reply.ReplyDate</small>
                                 <div>
                                     <a href="/ForumPost/EditComment/@reply.ReplyID" >Edit</a>

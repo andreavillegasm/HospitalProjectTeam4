@@ -177,13 +177,16 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BookingAppointmentController.cs" />
+    <Compile Include="Controllers\CareersFormController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\DonationController.cs" />
     <Compile Include="Controllers\ForumPostController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\JobPostingController.cs" />
     <Compile Include="Controllers\LostFoundController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\OnlineCheckInController.cs" />
     <Compile Include="Controllers\RegistrationController.cs" />
     <Compile Include="Data\HospitalProjectContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -217,9 +220,14 @@
     <Compile Include="Migrations\202004140613561_authentication-added.designer.cs">
       <DependentUpon>202004140613561_authentication-added.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004140842563_check-in.cs" />
+    <Compile Include="Migrations\202004140842563_check-in.designer.cs">
+      <DependentUpon>202004140842563_check-in.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Booking.cs" />
+    <Compile Include="Models\CareersForm.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Doctor.cs" />
     <Compile Include="Models\Donation.cs" />
@@ -227,14 +235,19 @@
     <Compile Include="Models\ForumReply.cs" />
     <Compile Include="Models\HospitalStaff.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\JobDepartment.cs" />
+    <Compile Include="Models\JobPosting.cs" />
+    <Compile Include="Models\JobType.cs" />
     <Compile Include="Models\LostFound.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\News.cs" />
+    <Compile Include="Models\OnlineCheckIn.cs" />
     <Compile Include="Models\Patient.cs" />
     <Compile Include="Models\Record.cs" />
     <Compile Include="Models\ViewModels\AddBooking.cs" />
     <Compile Include="Models\ViewModels\BookingDetails.cs" />
     <Compile Include="Models\ViewModels\ForumPostDetails.cs" />
+    <Compile Include="Models\ViewModels\ListOnlineCheckIns.cs" />
     <Compile Include="Models\ViewModels\ListRecords.cs" />
     <Compile Include="Models\ViewModels\UpdateBooking.cs" />
     <Compile Include="Models\ViewModels\UpdateNews.cs" />
@@ -253,6 +266,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\PagedList.css" />
+    <Content Include="Documentation\MasterERD\ER DIAGRAM ST.JOSEPH%27S GENERAL HOSPITAL PROJECT.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -282,6 +296,9 @@
     <Content Include="Wireframes\WireframesHospitalProjectManpreetKaurN01355663\IMG-6454.JPG" />
     <Content Include="Wireframes\WireframesHospitalProjectManpreetKaurN01355663\IMG-6455.JPG" />
     <Content Include="Wireframes\WireframesHospitalProjectManpreetKaurN01355663\IMG-6456.JPG" />
+    <Content Include="Documentation\Index" />
+    <Content Include="Documentation\MasterERD\Index" />
+    <Content Include="Documentation\Wireframes\index" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -358,6 +375,11 @@
     <Content Include="Views\ForumPost\EditComment.cshtml" />
     <Content Include="Views\ForumPost\AccessDenied.cshtml" />
     <Content Include="Views\ForumPost\AccessDeniedComment.cshtml" />
+    <Content Include="Views\OnlineCheckIn\Add.cshtml" />
+    <Content Include="Views\OnlineCheckIn\Delete.cshtml" />
+    <Content Include="Views\OnlineCheckIn\List.cshtml" />
+    <Content Include="Views\OnlineCheckIn\Show.cshtml" />
+    <Content Include="Views\OnlineCheckIn\Update.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\LostFoundImages\" />
@@ -398,6 +420,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004140613561_authentication-added.resx">
       <DependentUpon>202004140613561_authentication-added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004140842563_check-in.resx">
+      <DependentUpon>202004140842563_check-in.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

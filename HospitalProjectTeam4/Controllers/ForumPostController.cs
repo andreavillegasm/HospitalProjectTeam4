@@ -236,7 +236,7 @@ namespace HospitalProjectTeam4.Controllers
         [HttpPost]
         public ActionResult AddComment(int id, string replyContent)
         {
-            if (UserManager.IsUserPatient())
+            if (UserManager.IsUserDoctor())
             {
                 string doctorid = User.Identity.GetUserId();
 

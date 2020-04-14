@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+//Install  entity framework 6 on Tools > Manage Nuget Packages > Microsoft Entity Framework (ver 6.4)
+using System.Data.Entity;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+using HospitalProjectTeam4.Data;
 
 namespace HospitalProjectTeam4.Models
 {
@@ -13,7 +18,7 @@ namespace HospitalProjectTeam4.Models
         // An online check-in must reference to a specific patient.
         // An online check-in must reference to a specific booking appointment.
 
-        //[Key]
+        [Key]
         public int CheckInID { get; set; }
         public string PatientFName { get; set; }
         public string PatientLName { get; set; }
