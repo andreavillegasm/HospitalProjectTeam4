@@ -1,0 +1,19 @@
+﻿@model HospitalProjectTeam4.Models.ViewModels.ListOnlineCheckIns
+@{
+    ViewBag.Title = "Show";
+}
+
+<div class="container">
+    <h2 class="title">Show Online Check-In</h2>
+    <div class="glyphicon-edit butoons">
+        <a class="btn btn-danger" href="/OnlineCheckIn/Update/@Model.bookinginfo.BookingID">Edit</a>
+        <a class="btn btn-danger" href="/OnlineCheckIn/Delete/@Model.bookinginfo.BookingID">Delete</a>
+    </div>
+
+
+    <div>@Model.OnlineCheckIninfo.PatientFName</div>
+    <div>@Model.OnlineCheckIninfo.PatientLName</div>
+    <div>@Model.OnlineCheckIninfo.BookingID</div>
+
+
+</div>

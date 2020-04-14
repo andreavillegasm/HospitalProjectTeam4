@@ -1,0 +1,29 @@
+﻿@model HospitalProjectTeam4.Models.OnlineCheckIn
+@{
+    ViewBag.Title = "Update";
+}
+
+    <div class="container">
+        <h2>Update Online Check In</h2>
+        <form method="post" action="/OnlineCheckIn/Update/@Model.CheckInID" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="patientFName">Name:</label>
+                <input type="text" class="form-control" id="patientFName" name="patientFName" value="@Model.PatientFName" />
+            </div>
+
+            <div class="form-group">
+                <label for="patientLName">Last Name:</label>
+                <input type="text" class="form-control" id="patientLName" name="patientLName" value="@Model.PatientFName" />
+            </div>
+
+            <div class="form-group">
+                <label for="BookingID">Booking Reference Number:</label>
+                <input type="text" class="form-control" id="BookingID" name="BookingID" value="@Model.BookingID" />
+            </div>
+
+            <button type="submit" class="btn btn-info">Update Online Check In</button>
+
+
+        </form>
+
+    </div>
