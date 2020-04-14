@@ -16,8 +16,8 @@ namespace HospitalProjectTeam4.Models
         public string PatientID { get; set; }
         public virtual ApplicationUser ApplicationUser { get; set; }
         public string PatientFName { get; set; }
-        public string PatientMNmae { get; set; }
-        public string PatientLNmae { get; set; }
+        public string PatientMName { get; set; }
+        public string PatientLName { get; set; }
         public string PatientBirthDate { get; set; }
         public string PatientEmail { get; set; }
         public string PatientPhone { get; set; }

@@ -224,6 +224,14 @@
     <Compile Include="Migrations\202004140842563_check-in.designer.cs">
       <DependentUpon>202004140842563_check-in.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004141822511_incorrect.cs" />
+    <Compile Include="Migrations\202004141822511_incorrect.designer.cs">
+      <DependentUpon>202004141822511_incorrect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004141829463_correction.cs" />
+    <Compile Include="Migrations\202004141829463_correction.designer.cs">
+      <DependentUpon>202004141829463_correction.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Booking.cs" />
@@ -457,6 +465,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004140842563_check-in.resx">
       <DependentUpon>202004140842563_check-in.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004141822511_incorrect.resx">
+      <DependentUpon>202004141822511_incorrect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004141829463_correction.resx">
+      <DependentUpon>202004141829463_correction.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

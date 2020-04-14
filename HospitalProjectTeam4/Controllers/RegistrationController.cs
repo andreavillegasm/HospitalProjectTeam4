@@ -48,8 +48,8 @@ namespace HospitalProjectTeam4.Controllers
                     string id = NewUser.Id;
                     newpatient.PatientID = id;
                     newpatient.PatientFName = firstname;
-                    newpatient.PatientMNmae = middlename;
-                    newpatient.PatientLNmae = lastname;
+                    newpatient.PatientMName = middlename;
+                    newpatient.PatientLName = lastname;
                     newpatient.PatientBirthDate = dob;
                     newpatient.PatientEmail = emailaddress;
                     newpatient.PatientPhone = phonenumber;
