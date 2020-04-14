@@ -118,7 +118,9 @@ For news, i also implemented the category CRUD. There is one category to many ne
     * Controller: OnlineCheckInController.cs
  
 * Careers Form
-  - Description: This feature represents
+  - Description: This feature allows any user that visits St. Joseph General Hospital website to look any available job posting and         apply for job positions through the Careeers Form. Although any user can access the form to apply for a job, an administratior will     have the full access to create, edit, delete a Career Form, as well as a Job Posting.
+  
+  - Case Story: Jenny Stein has finished her degree in Practical Nursing and decided to move back to her town Elliot Lake. Before moving     back home, Jenny started looking for job opportunities at St. Joseph General Hospital. She looked into the available nursing job         postings and decided to take a chance and apply online through the careers form and submitted it. Hopefully she gets her dream job         soon!
   - Files:
     * Models: JobPosting.cs, JobDepartment.cs, JobType.cs, CareersForm.cs
     * Views:
