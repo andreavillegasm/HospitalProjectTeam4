@@ -42,7 +42,7 @@ Team Member Features and Contributions:
     * Views: ForumPost - List.cshtml , Add.cshtml , Update.cshtml , Show.cshtml , DeleteConfirm.cshtml , EditComment.cshtml  , AccessDenied.cshtml , AccessDeniedComment.cshtml
     * Controller: ForumPostController.cs
     
-* Contribution: Created GitHub Repo, Setup project DbContext File, Setup project IdentityModel File, Created AuthenticationFile, Answered questions and troubleshoot problems with team members code, Assisted and Resolved Git and Migration Conflicts during the whole process.
+* Contribution: Created GitHub Repo, Setup project DbContext File, Setup project IdentityModel File, Created AuthenticationFile, Answered questions and troubleshoot problems with team members code, Assisted and Resolved Git and Migration Conflicts during the whole process, Added nav bar links to the HomePage.
     
 ## Manpreet Kaur
 * News Section
