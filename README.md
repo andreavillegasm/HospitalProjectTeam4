@@ -39,7 +39,7 @@ Team Member Features and Contributions:
   When Mariana logins into her account again, she sees the reply from Doctor Alicia and deems it correct, so she marks the question as solved, so other people can see the question and learn from it.
   - Files:
     * Models: FormPost.cs , ForumReply.cs
-    * Views: ForumPost - List , Add.cshtml , Update.cshtml , Show.cshtml , DeleteConfirm.cshtml , EditComment.cshtml  , AccessDenied.cshtml , AccessDeniedComment.cshtml
+    * Views: ForumPost - List.cshtml , Add.cshtml , Update.cshtml , Show.cshtml , DeleteConfirm.cshtml , EditComment.cshtml  , AccessDenied.cshtml , AccessDeniedComment.cshtml
     * Controller: ForumPostController.cs
     
 * Contribution: Created GitHub Repo, Setup project DbContext File, Setup project IdentityModel File, Created AuthenticationFile, Answered questions and troubleshoot problems with team members code, Assisted and Resolved Git and Migration Conflicts during the whole process.
