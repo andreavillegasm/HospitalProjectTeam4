@@ -29,7 +29,7 @@ Team Member Features and Contributions:
   Once the Patient Mariana Logins she can see under her appointment with Doctor Florentino the prescription  and any other documents Doctor Florentino attached to the appointment, which now she can view and print.
   - Files
     * Models: Record.cs
-    * Views: (Found under BookingAppointment): ShowRecord.cshtml, UpdateRecord.cshtml, Deleterecord.cshtml, Show.cshtml (Insert Record        Part)
+    * Views: (Found under BookingAppointment): ShowRecord.cshtml, UpdateRecord.cshtml, DeleteRecord.cshtml, Show.cshtml (Insert Record        Part)
     * Controller: BookingAppointmentController.cs (All Record related methods)
  
 * PatientForum 
