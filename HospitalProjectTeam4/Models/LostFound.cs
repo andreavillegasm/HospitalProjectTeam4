@@ -20,7 +20,7 @@ namespace HospitalProjectTeam4.Models
         public string LostFoundColor { get; set; }
         public string LostFoundPerson { get; set; }
         public string LostFoundNote { get; set; }
-
+        public string picextension { get; set; }
        
         public string PatientID { get; set; }
         [ForeignKey("PatientID")]
