@@ -7,14 +7,14 @@
     {
         public override void Up()
         {
-            DropColumn("dbo.Patients", "PatientMName");
-            DropColumn("dbo.Patients", "PatientLNname");
+            DropColumn("dbo.Patients", "PatientMNmae");
+            DropColumn("dbo.Patients", "PatientLNmae");
         }
         
         public override void Down()
         {
-            AddColumn("dbo.Patients", "PatientLNname", c => c.String());
-            AddColumn("dbo.Patients", "PatientMName", c => c.String());
+            AddColumn("dbo.Patients", "PatientLNmae", c => c.String());
+            AddColumn("dbo.Patients", "PatientMNmae", c => c.String());
         }
     }
 }
