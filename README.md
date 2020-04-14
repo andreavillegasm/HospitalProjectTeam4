@@ -107,26 +107,24 @@ For news, i also implemented the category CRUD. There is one category to many ne
     
 ## Rosario Hernandez
 * Online Check-In
-
-- Description: Registered / Logged-In users have access to this feature in order to add, view a list of, and delete a Check-In that       is related with a specific booking appointment. Administrators have full access to  Online Check-In  where they can create, view,       edit and delete an online check-In.
+  - Description: Registered / Logged-In users have access to this feature in order to add, view a list of, and delete a Check-In that       is related with a specific booking appointment. Administrators have full access to  Online Check-In  where they can create, view,       edit and delete an online check-In.
   
-- User Story: Jake Murray has an appointment for today at 4:00 pm with his busy orthopedist at St. Joseph General Hospital, 3rd Floor.     Jake has arrived at the hospital at 3:55 pm and in order to keep his appointment, he logs in at the St. Joseph Hospital website         through his smartphone and checks-in for his appointment. Dr. Johnson's assistant can see in the offices database that Jake has         checked-in and they are both ready for his check-up.
-
+  - User Story: Jake Murray has an appointment for today at 4:00 pm with his busy orthopedist at St. Joseph General Hospital, 3rd Floor.    Jake has arrived at the hospital at 3:55 pm and in order to keep his appointment, he logs in at the St. Joseph Hospital website          through his smartphone and checks-in for his appointment. Dr. Johnson's assistant can see in the offices database that Jake has          checked-in and they are both ready for his check-up.
   - Files
-    * Models: OnlineCheckIn.cs
-    * Views: Add.cshtml, Delete.cshtml, List.cshtml, Show.cshtml, Update.cshtml
-    * Controller: OnlineCheckInController.cs
+     * Models: OnlineCheckIn.cs
+     * Views: Add.cshtml, Delete.cshtml, List.cshtml, Show.cshtml, Update.cshtml
+     * Controller: OnlineCheckInController.cs
  
 * Careers Form
   - Description: This feature allows any user that visits St. Joseph General Hospital website to look any available job posting and         apply for job positions through the Careeers Form. Although any user can access the form to apply for a job, an administratior will     have the full access to create, edit, delete a Career Form, as well as a Job Posting.
   
-  - Case Story: Jenny Stein has finished her degree in Practical Nursing and decided to move back to her town Elliot Lake. Before moving     back home, Jenny started looking for job opportunities at St. Joseph General Hospital. She looked into the available nursing job         postings and decided to take a chance and apply online through the careers form and submitted it. Hopefully she gets her dream job         soon!
+  - Case Story: Jenny Stein has finished her degree in Practical Nursing and decided to move back to her town Elliot Lake. Before moving     back home, Jenny started looking for job opportunities at St. Joseph General Hospital. She looked into the available nursing job         postings and decided to take a chance and apply online through the careers form and submitted it. Hopefully she gets her dream job       soon!
   - Files:
     * Models: JobPosting.cs, JobDepartment.cs, JobType.cs, CareersForm.cs
     * Views:
     * Controller: JobPostingController.cs, CareersFormController.cs
     
-* Contribution: Readme File.
+* Contribution: Created St. Joseph General Hospital Project ReadMe File structure, created documentation folder with ERD file ,           wireframes folder.
 
 ## Yegor Fomin
 * Articles
