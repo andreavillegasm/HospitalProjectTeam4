@@ -1,0 +1,25 @@
+﻿@model List<HospitalProjectTeam4.Models.OnlineCheckIn>
+@{
+    ViewBag.Title = "List";
+}
+
+<div class="container">
+
+    <h2 class="title">Online Check-In List</h2>
+    <a class="btn btn-success" href="/OnlineCheckIn/Add">Add New Online Check-In</a>
+
+
+    <div class="tilecontainer">
+        @foreach (var OnlineCheckIn in @Model)
+        {
+            <div class="listitem">
+                <div><a href="/OnlineCheckIn/Show/@OnlineCheckIn.CheckInID">@OnlineCheckIn.PatientFName</a></div>
+                <div><a href="/OnlineCheckIn/Show/@OnlineCheckIn.CheckInID">@OnlineCheckIn.PatientLName</a></div>
+
+            </div>
+
+        }
+
+    </div>
+
+</div>

@@ -1,0 +1,20 @@
+﻿@model HospitalProjectTeam4.Models.OnlineCheckIn
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div class="navbar">
+    <a href="/OnlineCheckIn/Show/@Model.CheckInID">Cancel</a>
+</div>
+
+<div class="container">
+    <h2 class="alert alert-danger" role="alert"></h2>
+    <p>Are you sure you want to delete Online Check-In @Model.CheckInID ?</p>
+
+    <form method="POST" action="/OnlineCheckIn/Delete @Model.CheckInID">
+        <div class="input">
+            <input class="btn bg-danger" type="submit" value=" Confirm" />
+        </div>
+    </form>
+</div>
+
