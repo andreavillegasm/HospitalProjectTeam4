@@ -1,4 +1,4 @@
-### HospitalProjectTeam4
+# HospitalProjectTeam4
 Hospital Name: St. Joseph General Hospital Elliot Lake
 
 Golden rules for team members:
@@ -21,7 +21,7 @@ Documentation per each member:
 
 Team Member Features and Contributions:
 
-#Andrea Villegas: (Team Leader) 
+## Andrea Villegas: (Team Leader) 
 * Records 
   - Description: 
   - Files
@@ -38,7 +38,7 @@ Team Member Features and Contributions:
     
 * Contribution: Assisted and Resolved Git and Migration Conflicts during the whole process.
     
-#Manpreet Kaur
+## Manpreet Kaur
 * News Section
   - Description: The news section feature is for users to read about the hospital.The users can only read the news in both list view and also in the single view read news by clicking on the newsname on the list page of news. They can't update and delete news from the hospital website.
   while, the admins can create, read, update and delete the news whenever they want.
@@ -66,7 +66,7 @@ For news, i also implemented the category CRUD. There is one category to many ne
     I  tried to do this feature but the identity user conceptwas confusing for me. So, i was unable to finish this feature.
 * Contribution:I created mine pages checked every content when others made commits and i tested database and helped Andrea by testing the commits.
     
-#Zameer Chariwala
+## Zameer Chariwala
 * Booking Appointment
   - Description: This feature is to book an appointment with any doctor in st.Joseph hospital. Where user will login and he can only see his/her appointment with doctor. They can update appointments and delete an appointments if they dont require anymore.
   
@@ -96,7 +96,7 @@ For news, i also implemented the category CRUD. There is one category to many ne
  
 * Contribution: Helping out with errors.
     
-#Rosario Hernandez
+## Rosario Hernandez
 * Online Check-In
 
 - Description: Registered / Logged-In users have access to this feature in order to add, view a list of, and delete a Check-In that       is related with a specific booking appointment. Administrators have full access to  Online Check-In  where they can create, view,       edit and delete an online check-In.
@@ -117,7 +117,7 @@ For news, i also implemented the category CRUD. There is one category to many ne
     
 * Contribution: Readme File.
 
-#Yegor Fomin
+## Yegor Fomin
 * Articles
   - Description: 
   - Files
