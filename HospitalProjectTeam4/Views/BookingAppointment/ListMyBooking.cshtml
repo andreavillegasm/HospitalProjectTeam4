@@ -10,9 +10,7 @@
         <input style="float:right" type="submit" class="btn btn-primary" value="Add booking" />
     </form>
 </div>
-<div>
-    @User.Identity.GetUserId();
-</div>
+
 <table class="table table-striped">
     <tr>
         <th>Doctor name</th>
@@ -24,14 +22,13 @@
     @{
         foreach (var books in Model)
         {
-        <tr>
-            <td><a href="Show/@books.BookingID">@books.Doctor.DoctorFName, @books.Doctor.DoctorLName</a></td>
-            <td><a>@books.BookingDate</a></td>
-            <td>@books.Patient.PatientFName, @books.Patient.PatientLNmae</td>
-            <td><a href="/Record/List/@books.BookingID">Records</a></td>
-            <td><a href="Update/@books.BookingID">Update</a></td>
-            <td><a href="Delete/@books.BookingID">Delete</a></td>
-        </tr>
+            <tr>
+                <td><a href="Show/@books.BookingID">@books.Doctor.DoctorFName, @books.Doctor.DoctorLName</a></td>
+                <td><a>@books.BookingDate</a></td>
+                <td>@books.Patient.PatientFName, @books.Patient.PatientLNmae</td>
+                <td><a href="Update/@books.BookingID">Update</a></td>
+                <td><a href="Delete/@books.BookingID">Delete</a></td>
+            </tr>
             //<div>@books.Doctor.DoctorFName</div>
             //<div>@books.BookingDate</div>
         }

@@ -45,6 +45,8 @@ namespace HospitalProjectTeam4.Data
         //that's not the case here, so this column is fine
         public bool IsAdmin { get; set; }
 
+       
+
     }
 
     //Becomes subclass of IdentityDBContenxt
