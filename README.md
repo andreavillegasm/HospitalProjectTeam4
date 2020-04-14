@@ -16,6 +16,7 @@
 
 ### Documentation:
 - Master Entity Relationship Diagram
+- ERD Justifications
 - Wireframes
 - Extras 
 
