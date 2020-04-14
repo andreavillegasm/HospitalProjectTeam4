@@ -30,7 +30,7 @@ namespace HospitalProjectTeam4.Controllers
             return View();
         }
         
-        public ActionResult List(string newssearchkey)
+        public ActionResult List(string newssearchkey, int pagenum = 0)
         {
             Debug.WriteLine("The parameter is " + newssearchkey);
             //for searchkey
@@ -41,9 +41,38 @@ namespace HospitalProjectTeam4.Controllers
             }
 
             //query to get the list of all the news in the system.
-            List<News> mynews = db.News.SqlQuery(query).ToList();
+            List<News> news = db.News.SqlQuery(query).ToList();
 
-            return View(mynews);
+            int perpage = 3;
+            int newscount = news.Count();
+            int maxpage = (int)Math.Ceiling((decimal)newscount / perpage) - 1;
+            if (maxpage < 0) maxpage = 0;
+            if (pagenum < 0) pagenum = 0;
+            if (pagenum > maxpage) pagenum = maxpage;
+            int start = (int)(perpage * pagenum);
+            ViewData["pagenum"] = pagenum;
+            ViewData["pagesummary"] = "";
+            if (maxpage > 0)
+            {
+                ViewData["pagesummary"] = (pagenum + 1) + " of " + (maxpage + 1);
+                List<SqlParameter> newparams = new List<SqlParameter>();
+
+                if (newssearchkey != "")
+                {
+                    newparams.Add(new SqlParameter("@searchkey", "%" + newssearchkey + "%"));
+                    ViewData["newssearchkey"] = newssearchkey;
+                }
+                newparams.Add(new SqlParameter("@start", start));
+                newparams.Add(new SqlParameter("@perpage", perpage));
+                string pagedquery = query + " order by NEWSID offset @start rows fetch first @perpage rows only ";
+                Debug.WriteLine(pagedquery);
+                Debug.WriteLine("offset " + start);
+                Debug.WriteLine("fetch first " + perpage);
+                news = db.News.SqlQuery(pagedquery, newparams.ToArray()).ToList();
+            }
+            //End of Pagination Algorithm
+
+            return View(news);
         }
 
         // GET: details of the news with id =id

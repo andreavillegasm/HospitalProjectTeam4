@@ -1,4 +1,4 @@
-﻿@model  HospitalProjectTeam4.Models.Booking
+﻿@model HospitalProjectTeam4.Models.ViewModels.BookingDetails
 @{
     ViewBag.Title = "Show";
 }
@@ -8,24 +8,70 @@
 <div class="container-fluid">
     <div class="col-md-4">
         <div><p style="font-weight:bold">Doctor information</p></div>
-        <div>@Model.Doctor.DoctorFName</div>
-        <div>@Model.Doctor.DoctorLName</div>
-        <div>@Model.Doctor.DoctorBirthDate</div>
-        <div>@Model.Doctor.DoctorPhone</div>
+        <div>@Model.bookinginfo.Doctor.DoctorFName</div>
+        <div>@Model.bookinginfo.Doctor.DoctorLName</div>
+        <div>@Model.bookinginfo.Doctor.DoctorBirthDate</div>
+        <div>@Model.bookinginfo.Doctor.DoctorPhone</div>
     </div>
     <div class="col-md-4">
         <div><p style="font-weight:bold">Patient information</p></div>
-        <div>@Model.Patient.PatientFName</div>
-        <div>@Model.Patient.PatientLNmae</div>
-        <div>@Model.Patient.PatientBirthDate</div>
-        <div>@Model.Patient.PatientPhone</div>
-        <div>@Model.Patient.PatientAltPhone</div>
+        <div>@Model.bookinginfo.Patient.PatientFName</div>
+        <div>@Model.bookinginfo.Patient.PatientLNmae</div>
+        <div>@Model.bookinginfo.Patient.PatientBirthDate</div>
+        <div>@Model.bookinginfo.Patient.PatientPhone</div>
+        <div>@Model.bookinginfo.Patient.PatientAltPhone</div>
     </div>
     <div class="col-md-4">
         <div><p style="font-weight:bold">Booking information</p></div>
-        <div>Booking date: @Model.BookingDate</div>
-        <div>Date booking was done: @Model.CurrentDate</div>
+        <div>Booking date: @Model.bookinginfo.BookingDate</div>
+        <div>Date booking was done: @Model.bookinginfo.CurrentDate</div>
     </div>
 
+
+</div>
+<!-- List of all the records associated with this appointment-->
+<h3>Records of this Appointment</h3>
+<div class="list-group">
+
+    @{
+        foreach (var record in Model.records)
+        {
+            <a href="/BookingAppointment/ShowRecord/@record.RecordID" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                    <h3 class="mb-1">@record.RecordName</h3>
+                    <small>@record.Booking.BookingDate</small>
+                </div>
+                <p class="mb-1">@record.RecordContent</p>
+            </a>
+
+        }
+
+
+    }
+</div>
+<div class="container">
+    <h3>Add a Record</h3>
+    <form method="post" action="/BookingAppointment/AttachRecord/@Model.bookinginfo.BookingID" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="recordName">Record Name</label>
+            <input type="text" class="form-control" id="recordName" name="RecordName">
+        </div>
+        <div class="form-group">
+            <label for="recordType">Type of Record</label>
+            <select class="form-control" name="recordType" id="recordType">
+                <option value="notes">Notes</option>
+                <option value="prescription">Prescription</option>
+                <option value="referral">Referral</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-check-label" for="recordContent">Description</label>
+            <input type="text" class="form-control" id="recordContent" name="recordContent">
+        </div>
+        <input type="hidden" class="form-control" id="hasFile" name="hasFile" value="0">
+
+        <button type="submit" class="btn btn-info">Add Record</button>
+    </form>
 </div>
 

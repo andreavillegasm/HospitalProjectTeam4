@@ -75,7 +75,17 @@ namespace HospitalProjectTeam4.Controllers
                 }
                 else if(user == "Hospitalstaff")
                 {
-
+                    HospitalStaff newstaff = new HospitalStaff();
+                    string id = NewUser.Id;
+                    newstaff.StaffID = id;
+                    newstaff.StaffFName = firstname;
+                    newstaff.StaffMNmae = middlename;
+                    newstaff.StaffNmae = lastname;
+                    newstaff.StaffBirthDate = dob;
+                    newstaff.StaffEmail = emailaddress;
+                    newstaff.StaffPhone = phonenumber;
+                    db.hospitalStaffs.Add(newstaff);
+                    db.SaveChanges();
                 }
                 else
                 {

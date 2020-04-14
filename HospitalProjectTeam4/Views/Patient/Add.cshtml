@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewBag.Title = "Add";
+}
+
+
+
+<div class="container">
+    <h2>Register Patient</h2>
+    <div class="errorbox">
+        @{
+            if (ViewBag.ErrorMessage != null)
+            {
+                @ViewBag.ErrorMessage
+                <ul>
+                    @foreach (var Error in ViewBag.Errors)
+                    {
+                        <li>@Error</li>
+                    }
+                </ul>
+            }
+        }
+
+    </div>
+    <form method="post" action="/Patient/Add">
+        <div class="sectionheader">Account Details</div>
+        <div class="form-group">
+            <label class="form-check-label" for="UserEmail">Email</label>
+            <input type="text" class="form-control" id="UserEmail" name="UserEmail">
+        </div>
+        <div class="form-group">
+            <label for="UserPassword">Password </label>
+            <div>
+                <small>Must have at least one non letter or digit character, one lowercase, and one uppercase</small>
+            </div>
+            <input type="password" class="form-control" id="UserPassword" name="UserPassword">
+        </div>
+        <div class="sectionheader">Patient Details</div>
+        <div class="form-group">
+            <label class="form-check-label" for="PatientFname">First Name</label>
+            <input type="text" class="form-control" id="PatientFname" name="PatientFname">
+        </div>
+        <div class="form-group">
+            <label class="form-check-label" for="PatientMname">Middle Name</label>
+            <input type="text" class="form-control" id="PatientMname" name="PatientMname">
+        </div>
+        <div class="form-group">
+            <label class="form-check-label" for="PatientLname">Last Name</label>
+            <input type="text" class="form-control" id="PatientLname" name="PatientLname">
+        </div>
+        <div class="form-group">
+            <label class="form-check-label" for="PatientDOB">Date of Birth</label>
+            <input type="date" class="form-control" id="PatientDOB" name="PatientDOB">
+        </div>
+        <div class="form-group">
+            <label class="form-check-label" for="PatientPhone">Phone Number</label>
+            <input type="text" class="form-control" id="PatientPhone" name="PatientPhone">
+        </div>
+        <div class="form-group">
+            <label class="form-check-label" for="PatientAltPhone">Alternative Phone Number</label>
+            <input type="text" class="form-control" id="PatientAltPhone" name="PatientAltPhone">
+        </div>
+
+
+        <button type="submit" class="btn btn-info">Register Patient</button>
+    </form>
+</div>
+

@@ -53,6 +53,12 @@
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -170,17 +176,13 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BookingAppointmentController.cs" />
-    <Compile Include="Controllers\CareersFormController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
-    <Compile Include="Controllers\DoctorController.cs" />
+    <Compile Include="Controllers\DonationController.cs" />
     <Compile Include="Controllers\ForumPostController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\JobPostingController.cs" />
     <Compile Include="Controllers\LostFoundController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
-    <Compile Include="Controllers\OnlineCheckInController.cs" />
-    <Compile Include="Controllers\RecordController.cs" />
     <Compile Include="Controllers\RegistrationController.cs" />
     <Compile Include="Data\HospitalProjectContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -190,31 +192,43 @@
     <Compile Include="Migrations\202004131435076_initial.designer.cs">
       <DependentUpon>202004131435076_initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004131825595_fixed-names.cs" />
+    <Compile Include="Migrations\202004131825595_fixed-names.designer.cs">
+      <DependentUpon>202004131825595_fixed-names.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\202004132003368_zam.cs" />
     <Compile Include="Migrations\202004132003368_zam.designer.cs">
       <DependentUpon>202004132003368_zam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004132137344_reference-doctor-to-replies.cs" />
+    <Compile Include="Migrations\202004132137344_reference-doctor-to-replies.designer.cs">
+      <DependentUpon>202004132137344_reference-doctor-to-replies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004140128506_donation.cs" />
+    <Compile Include="Migrations\202004140128506_donation.designer.cs">
+      <DependentUpon>202004140128506_donation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004140244034_picture.cs" />
+    <Compile Include="Migrations\202004140244034_picture.designer.cs">
+      <DependentUpon>202004140244034_picture.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Booking.cs" />
     <Compile Include="Models\Category.cs" />
-    <Compile Include="Models\CareersForm.cs" />
     <Compile Include="Models\Doctor.cs" />
+    <Compile Include="Models\Donation.cs" />
     <Compile Include="Models\ForumPost.cs" />
     <Compile Include="Models\ForumReply.cs" />
     <Compile Include="Models\HospitalStaff.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\JobDepartment.cs" />
-    <Compile Include="Models\JobPosting.cs" />
-    <Compile Include="Models\JobType.cs" />
     <Compile Include="Models\LostFound.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\News.cs" />
-    <Compile Include="Models\OnlineCheckIn.cs" />
     <Compile Include="Models\Patient.cs" />
     <Compile Include="Models\Record.cs" />
     <Compile Include="Models\ViewModels\AddBooking.cs" />
-    <Compile Include="Models\ViewModels\ListOnlineCheckIns.cs" />
+    <Compile Include="Models\ViewModels\BookingDetails.cs" />
     <Compile Include="Models\ViewModels\ForumPostDetails.cs" />
     <Compile Include="Models\ViewModels\ListRecords.cs" />
     <Compile Include="Models\ViewModels\UpdateBooking.cs" />
@@ -233,6 +247,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -247,6 +262,21 @@
     <Content Include="obj\Debug\HospitalProjectTeam4.csproj.CoreCompileInputs.cache" />
     <Content Include="obj\Debug\HospitalProjectTeam4.csproj.GenerateResource.cache" />
     <Content Include="obj\Debug\HospitalProjectTeam4.csprojAssemblyReference.cache" />
+    <Content Include="Wireframes\WireframesHospitalProjectManpreetKaurN01355663\IMG-6442.JPG" />
+    <Content Include="Wireframes\WireframesHospitalProjectManpreetKaurN01355663\IMG-6443.JPG" />
+    <Content Include="Wireframes\WireframesHospitalProjectManpreetKaurN01355663\IMG-6444.JPG" />
+    <Content Include="Wireframes\WireframesHospitalProjectManpreetKaurN01355663\IMG-6445.JPG" />
+    <Content Include="Wireframes\WireframesHospitalProjectManpreetKaurN01355663\IMG-6446.JPG" />
+    <Content Include="Wireframes\WireframesHospitalProjectManpreetKaurN01355663\IMG-6447.JPG" />
+    <Content Include="Wireframes\WireframesHospitalProjectManpreetKaurN01355663\IMG-6448.JPG" />
+    <Content Include="Wireframes\WireframesHospitalProjectManpreetKaurN01355663\IMG-6449.JPG" />
+    <Content Include="Wireframes\WireframesHospitalProjectManpreetKaurN01355663\IMG-6450.JPG" />
+    <Content Include="Wireframes\WireframesHospitalProjectManpreetKaurN01355663\IMG-6451.JPG" />
+    <Content Include="Wireframes\WireframesHospitalProjectManpreetKaurN01355663\IMG-6452.JPG" />
+    <Content Include="Wireframes\WireframesHospitalProjectManpreetKaurN01355663\IMG-6453.JPG" />
+    <Content Include="Wireframes\WireframesHospitalProjectManpreetKaurN01355663\IMG-6454.JPG" />
+    <Content Include="Wireframes\WireframesHospitalProjectManpreetKaurN01355663\IMG-6455.JPG" />
+    <Content Include="Wireframes\WireframesHospitalProjectManpreetKaurN01355663\IMG-6456.JPG" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -292,11 +322,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Record\List.cshtml" />
-    <Content Include="Views\Record\Show.cshtml" />
-    <Content Include="Views\Record\Add.cshtml" />
-    <Content Include="Views\Record\Update.cshtml" />
-    <Content Include="Views\Record\DeleteConfirm.cshtml" />
     <Content Include="Views\BookingAppointment\Add.cshtml" />
     <Content Include="Views\BookingAppointment\List.cshtml" />
     <Content Include="Views\ForumPost\List.cshtml" />
@@ -314,25 +339,22 @@
     <Content Include="Views\Category\List.cshtml" />
     <Content Include="Views\Category\Show.cshtml" />
     <Content Include="Views\Category\Update.cshtml" />
-    <Content Include="Views\Doctor\Add.cshtml" />
     <Content Include="Views\News\DeleteConfirm.cshtml" />
     <Content Include="Views\News\List.cshtml" />
     <Content Include="Views\News\New.cshtml" />
     <Content Include="Views\News\Show.cshtml" />
     <Content Include="Views\News\Update.cshtml" />
     <Content Include="Views\Registration\Add.cshtml" />
-    <Content Include="Views\OnlineCheckIn\Add.cshtml" />
-    <Content Include="Views\OnlineCheckIn\Delete.cshtml" />
-    <Content Include="Views\OnlineCheckIn\List.cshtml" />
-    <Content Include="Views\OnlineCheckIn\Show.cshtml" />
-    <Content Include="Views\OnlineCheckIn\Update.cshtml" />
+    <Content Include="Views\BookingAppointment\ListMyBooking.cshtml" />
+    <Content Include="Views\Donation\Add.cshtml" />
+    <Content Include="Views\BookingAppointment\ShowRecord.cshtml" />
+    <Content Include="Views\BookingAppointment\UpdateRecord.cshtml" />
+    <Content Include="Views\BookingAppointment\DeleteRecord.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Content\LostFoundImages\" />
     <Folder Include="Content\Records\" />
     <Folder Include="obj\Debug\TempPE\" />
-    <Folder Include="Views\CareersForm\" />
-    <Folder Include="Views\JobPosting\" />
-    <Folder Include="Wireframes\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -351,10 +373,21 @@
     <EmbeddedResource Include="Migrations\202004131435076_initial.resx">
       <DependentUpon>202004131435076_initial.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004131825595_fixed-names.resx">
+      <DependentUpon>202004131825595_fixed-names.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004132003368_zam.resx">
       <DependentUpon>202004132003368_zam.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="obj\Debug\HospitalProjectTeam4.Migrations.initial.resources" />
+    <EmbeddedResource Include="Migrations\202004132137344_reference-doctor-to-replies.resx">
+      <DependentUpon>202004132137344_reference-doctor-to-replies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004140128506_donation.resx">
+      <DependentUpon>202004140128506_donation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004140244034_picture.resx">
+      <DependentUpon>202004140244034_picture.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
