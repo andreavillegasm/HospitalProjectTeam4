@@ -11,5 +11,6 @@ namespace HospitalProjectTeam4.Models.ViewModels
 
         //List of all the comments associated with that post
         public List<ForumReply> forumReplies { get; set; }
+
     }
 }

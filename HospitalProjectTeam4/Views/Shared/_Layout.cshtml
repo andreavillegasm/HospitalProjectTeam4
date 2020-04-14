@@ -17,13 +17,17 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("St.Joseph's General Hospital", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("My appointments", "ListMyBooking", "BookAppointment")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Donate", "Add", "Donation")</li>
+                    <li>@Html.ActionLink("My appointments", "ListMyBooking", "BookingAppointment")</li>
+                    <li>@Html.ActionLink("News", "List", "News")</li>
+                    <li>@Html.ActionLink("Patient's Forum", "List", "ForumPost")</li>
+                    <li>@Html.ActionLink("Lost & Found", "List", "LostFound")</li>
+
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

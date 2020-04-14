@@ -22,25 +22,60 @@ namespace HospitalProjectTeam4.Controllers
 {
     public class ForumPostController : Controller
     {
-        private HospitalProjectContext db = new HospitalProjectContext();
+        //need this to work with the login functionalities
+        private ApplicationSignInManager _signInManager;
+        private ApplicationUserManager _userManager;
+        //reference how the Account Controller instantiates the controller class with SignInManager and UserManager
 
-        // GET: ForumPost
+
+        private HospitalProjectContext db = new HospitalProjectContext();
+        //paramaterless constructor
+        public ForumPostController() { }
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult List()
+        public ActionResult List(int pagenum = 0)
         {
 
             //Put the newest postings at the top
-            string query = "Select * from ForumPosts  order by PostingDate Desc";
+            string query = "Select * from ForumPosts";
 
             //Checks to see if the query is being sent
             Debug.WriteLine(query);
 
             //Grabs all the records plus the associated information regarding that specific record
             List<ForumPost> allposts = db.ForumPosts.SqlQuery(query).ToList();
+
+            //Start of Pagination Algorithm (Raw MSSQL)
+
+            //How many  posts do I want per page
+            int perpage = 5;
+
+            //Count how many posts on the list
+            int postcount = allposts.Count();
+            int maxpage = (int)Math.Ceiling((decimal)postcount / perpage) - 1;
+            if (maxpage < 0) maxpage = 0;
+            if (pagenum < 0) pagenum = 0;
+            if (pagenum > maxpage) pagenum = maxpage;
+            int start = (int)(perpage * pagenum);
+            ViewData["pagenum"] = pagenum;
+            ViewData["pagesummary"] = "";
+            if (maxpage > 0)
+            {
+                ViewData["pagesummary"] = (pagenum + 1) + " of " + (maxpage + 1);
+                List<SqlParameter> newparams = new List<SqlParameter>();
+
+                newparams.Add(new SqlParameter("@start", start));
+                newparams.Add(new SqlParameter("@perpage", perpage));
+                string pagedquery = query + " order by PostingDate Desc offset @start rows fetch first @perpage rows only ";
+                Debug.WriteLine(pagedquery);
+                Debug.WriteLine("offset " + start);
+                Debug.WriteLine("fetch first " + perpage);
+                allposts = db.ForumPosts.SqlQuery(pagedquery, newparams.ToArray()).ToList();
+            }
+            //End of Pagination Algorithm
 
 
             return View(allposts);
@@ -78,40 +113,66 @@ namespace HospitalProjectTeam4.Controllers
         //Display the Add page
         public ActionResult Add()
         {
-            return View();
+            //Show this page only if user is a patient
+            if (UserManager.IsUserPatient())
+            {
+                return View();
+
+            }
+            else
+            {
+                return View("AccessDenied");
+            }
+
+                
         }
+        //Displaying the Access denied page
+        public ActionResult AccessDenied()
+        {
+            return View();
+
+
+        }
+
 
         //ADD A NEW POST TO THE DATABASE
         //Method is only called when it comes from a form submission
         //Parameters are all the values from the form
         [HttpPost]
-        public ActionResult New(int patientID, string postingTitle, string postingCategory, string postingContent)
+        public ActionResult New(string postingTitle, string postingCategory, string postingContent, int postingState)
         {
 
+            //Only user can post on the page
+            string id = User.Identity.GetUserId();
 
-            //Getting the current time
-            DateTime currentTime = DateTime.Now;
+            //Only Patient can post
 
-            //CHECK IF THE VALUES ARE BEING PASSED INTO THE METHOD
-            Debug.WriteLine("The values passed into the method are: " + patientID + ", " + postingTitle + ", " + postingCategory + ", " + postingContent + ", " + currentTime);
+                //Getting the current time
+                DateTime currentTime = DateTime.Now;
 
-            //CREATE THE INSERT INTO QUERY
-            string query = "insert into ForumPosts (PatientID, PostingDate, PostingTitle, PostingCategory, PostingContent) values (@patientID, @currentTime, @postingTitle, @postingCategory, @postingContent)";
+                //CHECK IF THE VALUES ARE BEING PASSED INTO THE METHOD
+                Debug.WriteLine("The values passed into the method are: " + id + ", " + postingTitle + ", " + postingCategory + ", " + postingContent + ", " + currentTime,", "+ postingState );
 
-            //Binding the variables to the parameters
-            SqlParameter[] sqlparams = new SqlParameter[5];
-            //each piece of information is a key and value pair
-            sqlparams[0] = new SqlParameter("@patientID", patientID);
-            sqlparams[1] = new SqlParameter("@currentTime", currentTime);
-            sqlparams[2] = new SqlParameter("@postingTitle", postingTitle);
-            sqlparams[3] = new SqlParameter("@postingCategory", postingCategory);
-            sqlparams[4] = new SqlParameter("@postingContent", postingContent);
+                //CREATE THE INSERT INTO QUERY
+                string query = "insert into ForumPosts (PatientID, PostingDate, PostingTitle, PostingCategory, PostingContent, PostingState) values (@patientID, @currentTime, @postingTitle, @postingCategory, @postingContent, @postingState)";
+
+                //Binding the variables to the parameters
+                SqlParameter[] sqlparams = new SqlParameter[6];
+                //each piece of information is a key and value pair
+                sqlparams[0] = new SqlParameter("@patientID", id);
+                sqlparams[1] = new SqlParameter("@currentTime", currentTime);
+                sqlparams[2] = new SqlParameter("@postingTitle", postingTitle);
+                sqlparams[3] = new SqlParameter("@postingCategory", postingCategory);
+                sqlparams[4] = new SqlParameter("@postingContent", postingContent);
+                sqlparams[5] = new SqlParameter("@postingState", postingState);
 
             //RUN THE QUERY WITH THE PARAMETERS 
             db.Database.ExecuteSqlCommand(query, sqlparams);
 
 
-            return RedirectToAction("List");
+                return RedirectToAction("List");
+
+
         }
 
         //UPDATE 
@@ -175,23 +236,34 @@ namespace HospitalProjectTeam4.Controllers
         [HttpPost]
         public ActionResult AddComment(int id, string replyContent)
         {
-            Debug.WriteLine("forum post id is" + id);
+            if (UserManager.IsUserPatient())
+            {
+                string doctorid = User.Identity.GetUserId();
 
-            //Get the date for the comment
-            DateTime currentTime = DateTime.Now;
+                Debug.WriteLine("forum post id is" + id);
 
-            //Insert references into the bridging table
-            string query = "insert into ForumReplies (PostID, ReplyDate, ReplyContent) values (@id, @currentTime, @replyContent)";
-            SqlParameter[] sqlparams = new SqlParameter[3];
-            sqlparams[0] = new SqlParameter("@id", id);
-            sqlparams[1] = new SqlParameter("@currentTime", currentTime);
-            sqlparams[2] = new SqlParameter("@replyContent", replyContent);
+                //Get the date for the comment
+                DateTime currentTime = DateTime.Now;
+
+                //Insert references into the bridging table
+                string query = "insert into ForumReplies (PostID, ReplyDate, ReplyContent, DoctorID) values (@id, @currentTime, @replyContent, @doctorid)";
+                SqlParameter[] sqlparams = new SqlParameter[4];
+                sqlparams[0] = new SqlParameter("@id", id);
+                sqlparams[1] = new SqlParameter("@currentTime", currentTime);
+                sqlparams[2] = new SqlParameter("@replyContent", replyContent);
+                sqlparams[3] = new SqlParameter("@doctorid", doctorid);
 
 
-            db.Database.ExecuteSqlCommand(query, sqlparams);
-   
+                db.Database.ExecuteSqlCommand(query, sqlparams);
 
-            return RedirectToAction("Show/" + id);
+
+                return RedirectToAction("Show/" + id);
+
+            } else
+            {
+                return View("AccessDeniedComment");
+            }
+               
 
 
         }
@@ -244,6 +316,36 @@ namespace HospitalProjectTeam4.Controllers
 
 
             return RedirectToAction("Show/" + PostID);
+        }
+        //how to get the UserManager and SignInManager from the server
+        public ForumPostController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
+        {
+            UserManager = userManager;
+            SignInManager = signInManager;
+        }
+
+        public ApplicationSignInManager SignInManager
+        {
+            get
+            {
+                return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
+            }
+            private set
+            {
+                _signInManager = value;
+            }
+        }
+
+        public ApplicationUserManager UserManager
+        {
+            get
+            {
+                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            }
+            private set
+            {
+                _userManager = value;
+            }
         }
 
 

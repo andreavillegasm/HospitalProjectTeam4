@@ -8,6 +8,13 @@
 
     <a class="btn btn-success" href="/ForumPost/Add">Create a posting</a>
 
+    <div class="paginate">
+        @{
+            <a href="/ForumPost/List?pagenum=@((int)ViewData["pagenum"]-1)">Prev</a>
+            @ViewData["pagesummary"]
+            <a href="/ForumPost/List?pagenum=@((int)ViewData["pagenum"]+1)">Next</a>
+        }
+    </div>
 
     <div class="list-group">
 

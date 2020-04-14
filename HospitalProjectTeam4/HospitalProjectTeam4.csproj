@@ -171,6 +171,7 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\HospitalProjectTeam4Authentication.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
@@ -211,6 +212,10 @@
     <Compile Include="Migrations\202004140244034_picture.cs" />
     <Compile Include="Migrations\202004140244034_picture.designer.cs">
       <DependentUpon>202004140244034_picture.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004140613561_authentication-added.cs" />
+    <Compile Include="Migrations\202004140613561_authentication-added.designer.cs">
+      <DependentUpon>202004140613561_authentication-added.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -350,6 +355,9 @@
     <Content Include="Views\BookingAppointment\ShowRecord.cshtml" />
     <Content Include="Views\BookingAppointment\UpdateRecord.cshtml" />
     <Content Include="Views\BookingAppointment\DeleteRecord.cshtml" />
+    <Content Include="Views\ForumPost\EditComment.cshtml" />
+    <Content Include="Views\ForumPost\AccessDenied.cshtml" />
+    <Content Include="Views\ForumPost\AccessDeniedComment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\LostFoundImages\" />
@@ -387,6 +395,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004140244034_picture.resx">
       <DependentUpon>202004140244034_picture.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004140613561_authentication-added.resx">
+      <DependentUpon>202004140613561_authentication-added.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
