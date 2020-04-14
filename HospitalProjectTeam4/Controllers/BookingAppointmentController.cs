@@ -26,21 +26,24 @@ namespace HospitalProjectTeam4.Controllers
             return View();
         }
 
+        //This add function will simply retrieve all patients and doctor data and pass it to view
         public ActionResult Add()
         {
             
             AddBooking viewmodel = new AddBooking();
-
+            //Doctor details
             viewmodel.Doctors = db.Doctors.ToList();
+            //Patient details
             viewmodel.Patients = db.Patients.ToList();
             
             return View(viewmodel);
         }
         [HttpPost]
+        //Add function will will capture data from the view page and add them to BookingAppointment table
         public ActionResult Add(string doctorid,string datebooking,string patientid)
         {
             //Debug.WriteLine(doctorid + datebooking + patientid);
-            //string BookingTime = "1200";
+            
             DateTime now = DateTime.Now;
             Debug.WriteLine(now);
             Booking book = new Booking();
@@ -52,15 +55,17 @@ namespace HospitalProjectTeam4.Controllers
             db.Bookings.Add(book);
             db.SaveChanges();
             //return View();
-            return RedirectToAction("List");
+            return RedirectToAction("ListMyBooking");
         }
 
+        //List will fetch all booking details from table and send it to view
         public ActionResult List()
         {
             List<Booking> Bookings;
             Bookings = db.Bookings.ToList();
             return View(Bookings);
         }
+        //This function will capture who is logged in and only show his/her bookings
         public ActionResult ListMyBooking()
         {
             string id = User.Identity.GetUserId();
@@ -70,6 +75,8 @@ namespace HospitalProjectTeam4.Controllers
             return View(Bookings);
         }
 
+
+        //Deatil information about appointment
         public ActionResult Show(int id)
         {
 
@@ -98,8 +105,11 @@ namespace HospitalProjectTeam4.Controllers
 
             return View(viewmodel);
         }
+
+        //Update booking appointment
         public ActionResult Update(int id)
         {
+            //This different model to fetch data from different tables
             UpdateBooking viewmodel = new UpdateBooking();
 
             viewmodel.Booking = db.Bookings.FirstOrDefault(booking => booking.BookingID == id);
@@ -112,7 +122,7 @@ namespace HospitalProjectTeam4.Controllers
         public ActionResult Update(int id, string doctorid, string datebooking, string patientid)
         {
             
-
+            //Update the booking details
             Booking booking = db.Bookings.FirstOrDefault(b => b.BookingID == id);
 
             booking.DoctorID = doctorid;
@@ -121,14 +131,15 @@ namespace HospitalProjectTeam4.Controllers
 
             db.SaveChanges();
 
-            return RedirectToAction("List");
+            return RedirectToAction("ListMyBooking");
         }
+        //To delete booking appointment
         public ActionResult Delete(int id)
         {
             string query = "delete from Bookings where BookingID = @id";
             SqlParameter param = new SqlParameter("@id", id);
             db.Database.ExecuteSqlCommand(query, param);
-            return RedirectToAction("List");
+            return RedirectToAction("ListMyBooking");
         }
 
         //Displaying details of a record

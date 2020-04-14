@@ -29,6 +29,7 @@ namespace HospitalProjectTeam4.Controllers
             return View();
         }
         [HttpPost]
+        //This function will add lost and found reports 
         public ActionResult Add(string lostorfound,HttpPostedFileBase itempic, string item, string category, string color, string contactno, string note)
         {
 
@@ -61,6 +62,7 @@ namespace HospitalProjectTeam4.Controllers
                             itempic.SaveAs(path);
                             //if these are all successful then we can set these fields
                             haspic = 1;
+                            //This will be in database to fetch and used to display photo on show page
                             picextension = fn;
 
                         }
@@ -75,7 +77,7 @@ namespace HospitalProjectTeam4.Controllers
                     }
                 }
             }
-
+            //Store details in lost and found table
             LostFound lostandfound = new LostFound();
             DateTime now = DateTime.Now;
             
@@ -87,6 +89,7 @@ namespace HospitalProjectTeam4.Controllers
             lostandfound.LostFoundPerson = contactno;
             lostandfound.LostFoundNote = note;
             lostandfound.picextension = picextension;
+            //Stores patientID to associate with patient
             lostandfound.PatientID = id;
             db.lostFounds.Add(lostandfound);
             db.SaveChanges();
@@ -95,6 +98,7 @@ namespace HospitalProjectTeam4.Controllers
         }
         public ActionResult List(string sel,int? page)
         {
+            //List all reports in Pagination format
             List<LostFound> lostFounds;
             if (sel != "" && sel != null)
             {
@@ -104,14 +108,17 @@ namespace HospitalProjectTeam4.Controllers
             {
                 lostFounds = db.lostFounds.ToList();
             }
+            //returns list of reports in pagination 5 at a time.
             return View(lostFounds.ToPagedList(page ?? 1,5));
         }
+        //Fetch report detail and pass it to view to see what values are in database already
         public ActionResult Update(int id)
         {
             LostFound item = db.lostFounds.FirstOrDefault(b => b.LostFoundID == id);
             return View(item);
         }
         [HttpPost]
+        //Update the report
         public ActionResult Update(int id, string lostorfound, string item, string category, string color, string contactno, string note)
         {
             LostFound items = db.lostFounds.FirstOrDefault(b => b.LostFoundID == id);
@@ -126,11 +133,14 @@ namespace HospitalProjectTeam4.Controllers
             db.SaveChanges();
             return RedirectToAction("List");
         }
+
+        //Show details of report
         public ActionResult show(int id)
         {
             LostFound item = db.lostFounds.FirstOrDefault(b => b.LostFoundID == id);
             return View(item);
         }
+        //Delete report
         public ActionResult Delete(int id)
         {
             string query = "delete from LostFounds where LostFoundID = @id";
