@@ -55,7 +55,7 @@ namespace HospitalProjectTeam4.Controllers
             db.Bookings.Add(book);
             db.SaveChanges();
             //return View();
-            return RedirectToAction("List");
+            return RedirectToAction("ListMyBooking");
         }
 
         //List will fetch all booking details from table and send it to view
@@ -131,7 +131,7 @@ namespace HospitalProjectTeam4.Controllers
 
             db.SaveChanges();
 
-            return RedirectToAction("List");
+            return RedirectToAction("ListMyBooking");
         }
         //To delete booking appointment
         public ActionResult Delete(int id)
@@ -139,7 +139,7 @@ namespace HospitalProjectTeam4.Controllers
             string query = "delete from Bookings where BookingID = @id";
             SqlParameter param = new SqlParameter("@id", id);
             db.Database.ExecuteSqlCommand(query, param);
-            return RedirectToAction("List");
+            return RedirectToAction("ListMyBooking");
         }
 
         //Displaying details of a record
