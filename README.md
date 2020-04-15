@@ -2,7 +2,7 @@
 Hospital Name: St. Joseph General Hospital Elliot Lake
 
 
-Tutorial Video: https://youtu.be/a8qNvSDGo1s
+Tutorial Video: https://youtu.be/mn2txyjNM0c
 
 Golden rules for team members:
 * Pull your code first
