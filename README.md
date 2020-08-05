@@ -1,8 +1,9 @@
 # HospitalProjectTeam4
 Hospital Name: St. Joseph General Hospital Elliot Lake
 
-
+Live Site: http://stjosegeneralhospital.azurewebsites.net/
 Tutorial Video: https://youtu.be/mn2txyjNM0c
+
 
 Golden rules for team members:
 * Pull your code first
