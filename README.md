@@ -2,6 +2,7 @@
 Hospital Name: St. Joseph General Hospital Elliot Lake
 
 Live Site: http://stjosegeneralhospital.azurewebsites.net/
+
 Tutorial Video: https://youtu.be/mn2txyjNM0c
 
 
